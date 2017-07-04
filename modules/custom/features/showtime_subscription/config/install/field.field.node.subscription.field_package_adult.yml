@@ -8,14 +8,16 @@ id: node.subscription.field_package_adult
 field_name: field_package_adult
 entity_type: node
 bundle: subscription
-label: Adult
+label: 'Adult Tickets'
 description: 'The number of adult tickets in this family package.'
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 2
 default_value_callback: ''
 settings:
-  min: null
+  min: 0
   max: null
   prefix: ''
   suffix: ''

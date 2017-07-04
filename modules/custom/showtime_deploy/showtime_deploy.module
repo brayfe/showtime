@@ -26,6 +26,23 @@ function showtime_deploy_form_alter(&$form, FormStateInterface $form_state, $for
 
     $form['#validate'][] = '_validate_role_pyramid';
   }
+  elseif ($form_id == 'node_subscription_form' || $form_id == 'node_subscription_edit_form') {
+    $form['field_package_adult']['#states'] = [
+      'visible' => [
+        'input[name=field_family_package]' => ['value' => 1],
+      ],
+      'required' => [
+        'input[name=field_family_package]' => ['value' => 1],
+      ],
+    ];
+    $form['field_package_child']['#states'] = [
+      'visible' => [
+        'input[name=field_family_package]' => ['value' => 1],
+      ],
+    ];
+
+    $form['#validate'][] = '_validate_family_package';
+  }
 }
 
 /**
@@ -46,6 +63,21 @@ function _validate_role_pyramid(&$form, FormStateInterface $form_state) {
     if (in_array('captain', $roles) && $form_state->getValue($chair) == NULL) {
       $form_state->setErrorByName('field_division_chair', t("Please list this user's Division Chair."));
     }
+  }
+}
+
+/**
+ * Adds validation on submission values in user form.
+ */
+function _validate_family_package(&$form, FormStateInterface $form_state) {
+  // If Family Package is no, set number of package adult tickets to 0.
+  if ($form_state->getValue(['field_family_package', 0, 'value']) == "0") {
+    $form_state->setValue(['field_package_adult', 0, 'value'], 0);
+  }
+  // Otherwise, Family Package is Yes, and we need to confirm
+  // a value is entered for package adult tickets.
+  elseif ($form_state->getValue(['field_package_adult', 0, 'value']) == NULL) {
+    $form_state->setErrorByName('field_package_adult', t("List the number of Adult tickets for this family package."));
   }
 }
 

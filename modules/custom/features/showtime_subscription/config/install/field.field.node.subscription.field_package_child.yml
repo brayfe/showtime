@@ -8,14 +8,14 @@ id: node.subscription.field_package_child
 field_name: field_package_child
 entity_type: node
 bundle: subscription
-label: Child
+label: 'Child Tickets'
 description: 'The number of child tickets in this family package.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: null
+  min: 0
   max: null
   prefix: ''
   suffix: ''

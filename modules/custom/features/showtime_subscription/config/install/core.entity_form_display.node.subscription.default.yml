@@ -43,10 +43,11 @@ third_party_settings:
       weight: 6
       format_type: details
       format_settings:
+        label: 'Family Package'
+        open: true
+        required_fields: true
         id: ''
         classes: ''
-        open: false
-        required_fields: true
       label: 'Family Package'
 id: node.subscription.default
 targetEntityType: node
