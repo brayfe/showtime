@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: chair
+label: 'Division Chair'
+weight: 3
+is_admin: false
+permissions: {  }

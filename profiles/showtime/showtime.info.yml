@@ -1,0 +1,53 @@
+name: 'Showtime El Paso'
+version: '8.x-1.0'
+core: '8.x'
+type: profile
+description: 'A custom installation for the Showtime EP ticket system.'
+distribution:
+  name: Showtime
+
+# Required modules
+dependencies:
+  # core
+  - block_content
+  - breakpoint
+  - ckeditor
+  - color
+  - config
+  - contextual
+  - datetime
+  - dblog
+  - editor
+  - entity_reference
+  - field_ui
+  - file
+  - history
+  - image
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - quickedit
+  - rdf
+  - search
+  - shortcut
+  - taxonomy
+  - telephone
+  - text
+  - toolbar
+  - views
+  - views_ui
+  # contrib
+  - admin_toolbar
+  - address
+  - config_update
+  - feeds
+  - features
+  - features_ui
+
+
+themes:
+  - bartik
+  - adminimal_theme

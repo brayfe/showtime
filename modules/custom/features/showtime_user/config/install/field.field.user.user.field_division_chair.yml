@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_division_chair
+  module:
+    - user
+id: user.user.field_division_chair
+field_name: field_division_chair
+entity_type: user
+bundle: user
+label: 'Division Chair'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+      role:
+        chair: chair
+        administrator: '0'
+        captain: '0'
+        sales_rep: '0'
+        subscriber: '0'
+    target_bundles: null
+    sort:
+      field: field_last_name
+      direction: DESC
+    auto_create: false
+field_type: entity_reference

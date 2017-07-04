@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_captain
+  module:
+    - user
+id: user.user.field_captain
+field_name: field_captain
+entity_type: user
+bundle: user
+label: Captain
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+      role:
+        captain: captain
+        administrator: '0'
+        chair: '0'
+        sales_rep: '0'
+        subscriber: '0'
+    target_bundles: null
+    sort:
+      field: field_last_name
+      direction: DESC
+    auto_create: false
+field_type: entity_reference
