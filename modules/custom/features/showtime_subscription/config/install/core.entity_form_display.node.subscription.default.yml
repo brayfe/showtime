@@ -1,0 +1,167 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.register
+    - field.field.node.subscription.field_collected
+    - field.field.node.subscription.field_family_package
+    - field.field.node.subscription.field_new_subscriber
+    - field.field.node.subscription.field_order_season
+    - field.field.node.subscription.field_package_adult
+    - field.field.node.subscription.field_package_child
+    - field.field.node.subscription.field_parking_pass
+    - field.field.node.subscription.field_sales_representative
+    - field.field.node.subscription.field_single_adult
+    - field.field.node.subscription.field_single_youth
+    - field.field.node.subscription.field_subscriber
+    - node.type.subscription
+  module:
+    - field_group
+    - inline_entity_form
+    - path
+third_party_settings:
+  field_group:
+    group_single_tickets:
+      children:
+        - field_single_adult
+        - field_single_youth
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Single Tickets'
+    group_family_package:
+      children:
+        - field_family_package
+        - field_package_adult
+        - field_package_child
+      parent_name: ''
+      weight: 6
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Family Package'
+id: node.subscription.default
+targetEntityType: node
+bundle: subscription
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_collected:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_family_package:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_new_subscriber:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_order_season:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_package_adult:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_package_child:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_parking_pass:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_sales_representative:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_single_adult:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_single_youth:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_subscriber:
+    weight: 2
+    settings:
+      form_mode: register
+      override_labels: true
+      label_singular: Subscriber
+      label_plural: Subscribers
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

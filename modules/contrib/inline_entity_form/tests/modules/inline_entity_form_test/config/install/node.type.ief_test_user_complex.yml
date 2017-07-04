@@ -1,0 +1,9 @@
+langcode: en
+status: true
+name: 'IEF test user complex'
+type: ief_test_user_complex
+description: 'Content type for IEF complex widget testing with user entity type.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

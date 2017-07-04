@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.subscription.field_collected
+    - field.field.node.subscription.field_family_package
+    - field.field.node.subscription.field_new_subscriber
+    - field.field.node.subscription.field_order_season
+    - field.field.node.subscription.field_package_adult
+    - field.field.node.subscription.field_package_child
+    - field.field.node.subscription.field_parking_pass
+    - field.field.node.subscription.field_sales_representative
+    - field.field.node.subscription.field_single_adult
+    - field.field.node.subscription.field_single_youth
+    - field.field.node.subscription.field_subscriber
+    - node.type.subscription
+  module:
+    - user
+id: node.subscription.teaser
+targetEntityType: node
+bundle: subscription
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_collected: true
+  field_family_package: true
+  field_new_subscriber: true
+  field_order_season: true
+  field_package_adult: true
+  field_package_child: true
+  field_parking_pass: true
+  field_sales_representative: true
+  field_single_adult: true
+  field_single_youth: true
+  field_subscriber: true

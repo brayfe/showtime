@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sales_representative
+    - node.type.subscription
+id: node.subscription.field_sales_representative
+field_name: field_sales_representative
+entity_type: node
+bundle: subscription
+label: 'Sales Representative'
+description: 'The representative that sold this subscription.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+      role:
+        sales_rep: sales_rep
+        administrator: '0'
+        chair: '0'
+        captain: '0'
+    target_bundles: null
+    sort:
+      field: field_last_name
+      direction: DESC
+    auto_create: false
+field_type: entity_reference

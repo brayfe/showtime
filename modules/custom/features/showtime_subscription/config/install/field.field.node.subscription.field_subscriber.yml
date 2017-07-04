@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subscriber
+    - node.type.subscription
+id: node.subscription.field_subscriber
+field_name: field_subscriber
+entity_type: node
+bundle: subscription
+label: Subscriber
+description: 'The subscriber for this subscription.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

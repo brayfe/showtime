@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_new_subscriber
+    - node.type.subscription
+id: node.subscription.field_new_subscriber
+field_name: field_new_subscriber
+entity_type: node
+bundle: subscription
+label: 'New Subscriber'
+description: 'Is this the first time this person has ordered tickets?'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

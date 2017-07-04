@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_package_child
+    - node.type.subscription
+id: node.subscription.field_package_child
+field_name: field_package_child
+entity_type: node
+bundle: subscription
+label: Child
+description: 'The number of child tickets in this family package.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

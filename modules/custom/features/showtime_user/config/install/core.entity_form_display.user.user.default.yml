@@ -31,10 +31,8 @@ third_party_settings:
       children:
         - field_first_name
         - field_last_name
-        - field_email
         - field_phone
         - field_address
-        - field_sales_rep
         - field_captain
         - field_division_chair
       parent_name: group_user_form

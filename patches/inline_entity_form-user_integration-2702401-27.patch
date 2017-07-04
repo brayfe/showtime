@@ -1,0 +1,683 @@
+diff --git a/inline_entity_form.module b/inline_entity_form.module
+index 89e27de..1035a03 100644
+--- a/inline_entity_form.module
++++ b/inline_entity_form.module
+@@ -25,6 +25,10 @@ function inline_entity_form_entity_type_build(array &$entity_types) {
+     $entity_types['node']->setHandlerClass('inline_form', '\Drupal\inline_entity_form\Form\NodeInlineForm');
+   }
+
++  if (isset($entity_types['user']) && !$entity_types['user']->getHandlerClass('inline_form')) {
++    $entity_types['user']->setHandlerClass('inline_form', '\Drupal\inline_entity_form\Form\UserInlineForm');
++  }
++
+   foreach ($entity_types as &$entity_type) {
+     if (!$entity_type->hasHandlerClass('inline_form')) {
+       $entity_type->setHandlerClass('inline_form', '\Drupal\inline_entity_form\Form\EntityInlineForm');
+diff --git a/src/Form/UserInlineForm.php b/src/Form/UserInlineForm.php
+new file mode 100644
+index 0000000..f71c68f
+--- /dev/null
++++ b/src/Form/UserInlineForm.php
+@@ -0,0 +1,137 @@
++<?php
++
++namespace Drupal\inline_entity_form\Form;
++
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\Core\Entity\ContentEntityInterface;
++use Drupal\Core\StringTranslation\StringTranslationTrait;
++
++/**
++ * User inline form handler.
++ */
++class UserInlineForm extends EntityInlineForm {
++
++  use StringTranslationTrait;
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getEntityTypeLabels() {
++    $labels = [
++      'singular' => $this->t('user'),
++      'plural' => $this->t('users'),
++    ];
++    return $labels;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function entityForm(array $entity_form, FormStateInterface $form_state) {
++    $entity = $entity_form['#entity'];
++    // Get standard User form to take account and other elements.
++    // We need to do this, because a bunch of standard fields for a user
++    // cannot be loaded by a common way. For example 'name' or 'mail'.
++    // They have no widgets, but defined in AccountForm.
++    // @see EntityFormDisplay->collectRenderDisplay().
++    $form = \Drupal::service('entity.form_builder')
++      ->getForm($entity, 'default');
++    $keys = ['account', 'contact', 'language', 'timezone'];
++    foreach ($keys as $key) {
++      if (!empty($form[$key])) {
++        $entity_form[$key] = $form[$key];
++      }
++    }
++
++    $entity_form = parent::entityForm($entity_form, $form_state);
++
++    // We should save user otherwise values will be not set in
++    // AccountForm->form.
++    $entity_form['#save_entity'] = TRUE;
++    return $entity_form;
++  }
++
++  /**
++   * Builds an updated entity object based upon the submitted form values.
++   */
++  protected function buildEntity(array $entity_form, ContentEntityInterface $entity, FormStateInterface $form_state) {
++    // Reuse logic from class EntityForm.
++    $this->copyFormValuesToEntity($entity, $entity_form, $form_state);
++
++    // Invoke all specified builders for copying form values to entity fields.
++    if (isset($entity_form['#entity_builders'])) {
++      foreach ($entity_form['#entity_builders'] as $function) {
++        call_user_func_array($function, [
++          $entity->getEntityTypeId(),
++          $entity,
++          &$entity_form,
++          &$form_state,
++        ]);
++      }
++    }
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function copyFormValuesToEntity(ContentEntityInterface $entity, array $entity_form, FormStateInterface $form_state) {
++    // First, extract values from widgets.
++    $extracted = $this->getFormDisplay($entity, $entity_form['#form_mode'])
++      ->extractFormValues($entity, $entity_form, $form_state);
++
++    $user_input = $form_state->getUserInput();
++
++    // We cannot use 'values' of the form state, because they are empty.
++    // And they are empty because form was created manually in method
++    // entityForm of this class.
++    foreach ($user_input as $name => $values) {
++      // $form_state is mixed and consists of values of parent and child
++      // entities. We have to exclude values of properties 'uid', 'created' and
++      // 'changed'. 'langcode' has been excluded because it's null, but
++      // shouldn't be null.
++      // @todo case with langcode requires additional investigation.
++      if (!in_array($name, ['langcode', 'uid', 'created', 'changed', 'role'])) {
++        // Handle password.
++        // We need this hack because element with type password_confirm
++        // cannot be processed normally in function validatePasswordConfirm.
++        if ($name == 'pass') {
++          if (!empty($values['pass1'])) {
++            $entity->set('pass', $values['pass1']);
++          }
++          else {
++            $entity->set('pass', '');
++          }
++        }
++        // Other fields.
++        elseif ($entity->hasField($name) && !isset($extracted[$name])) {
++          $entity->set($name, $values);
++        }
++      }
++    }
++    // Handle field role separately.
++    // @see AccountForm->buildEntity().
++    $roles = [];
++    if (!empty($user_input['roles'])) {
++      $roles = array_keys(array_filter($user_input['roles']));
++    }
++    $entity->set('roles', $roles);
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function submitCleanFormState(&$entity_form, FormStateInterface $form_state) {
++    // Handle saving of the value for module contact.
++    // @see contact_user_profile_form_submit().
++    if (\Drupal::service('module_handler')->moduleExists('contact')) {
++      $entity = $entity_form['#entity'];
++      $contact = !empty($form_state->getUserInput()['contact']) ? 1 : 0;
++      if ($entity->id()) {
++        \Drupal::service('user.data')
++          ->set('contact', $entity->id(), 'enabled', $contact);
++      }
++    }
++    parent::submitCleanFormState($entity_form, $form_state);
++  }
++
++}
+diff --git a/src/Tests/ComplexWidgetUserWebTest.php b/src/Tests/ComplexWidgetUserWebTest.php
+new file mode 100644
+index 0000000..d062a0f
+--- /dev/null
++++ b/src/Tests/ComplexWidgetUserWebTest.php
+@@ -0,0 +1,150 @@
++<?php
++
++namespace Drupal\inline_entity_form\Tests;
++
++/**
++ * IEF complex field widget on user entity tests.
++ *
++ * @group inline_entity_form
++ */
++class ComplexWidgetUserWebTest extends InlineEntityFormTestBase {
++
++  /**
++   * Modules to enable.
++   *
++   * @var array
++   */
++  public static $modules = [
++    'inline_entity_form_test',
++    'field',
++    'field_ui',
++  ];
++
++  /**
++   * URL to add new content.
++   *
++   * @var string
++   */
++  protected $formContentAddUrl;
++
++  /**
++   * Entity form display storage.
++   *
++   * @var \Drupal\Core\Config\Entity\ConfigEntityStorageInterface
++   */
++  protected $entityFormDisplayStorage;
++
++  /**
++   * Prepares environment for tests.
++   */
++  protected function setUp() {
++    parent::setUp();
++
++    $this->user = $this->createUser([
++      'create ief_test_user_complex content',
++      'edit any ief_test_user_complex content',
++      'delete any ief_test_user_complex content',
++      'administer content types',
++      'administer users',
++      'administer permissions',
++    ]);
++    $this->drupalLogin($this->user);
++
++    $this->formContentAddUrl = 'node/add/ief_test_user_complex';
++    $this->entityFormDisplayStorage = $this->container->get('entity_type.manager')->getStorage('entity_form_display');
++  }
++
++  /**
++   * Tests if form behaves correctly when field is empty.
++   */
++  public function testEmptyFieldIef() {
++    $this->drupalGet($this->formContentAddUrl);
++
++    $user_fields = array(
++      'mail' => 'Email',
++      'name' => 'Username',
++      'pass[pass1]' => 'Password',
++      'pass[pass2]' => 'Password confirm',
++      'status' => 'Status',
++      'roles[authenticated]' => 'Roles',
++      'notify' => 'Notify user',
++      'timezone' => 'Timezone',
++      'field_user_reference_multiple[form][inline_entity_form][field_first_name][0][value]' => 'First name',
++    );
++
++    foreach ($user_fields as $field_name => $message) {
++      $this->assertNoFieldByName($field_name, NULL, $message . ' field does not appear.');
++    }
++    $this->assertFieldByXpath('//input[@type="submit" and @value="Add new user"]', NULL, 'Found "Add new user" submit button');
++    $this->assertFieldByXpath('//input[@type="submit" and @value="Add existing user"]', NULL, 'Found "Add existing user" submit button');
++
++    // Now submit 'Add new user' button.
++    $this->drupalPostAjaxForm(NULL, [], $this->getButtonName('//input[@type="submit" and @value="Add new user" and @data-drupal-selector="edit-field-user-reference-multiple-actions-ief-add"]'));
++
++    foreach ($user_fields as $field_name => $message) {
++      $this->assertFieldByName($field_name, NULL, $message . ' field on inline form exists.');
++    }
++    $this->assertFieldByXpath('//input[@type="submit" and @value="Create user"]', NULL, 'Found "Create user" submit button');
++    $this->assertFieldByXpath('//input[@type="submit" and @value="Cancel"]', NULL, 'Found "Cancel" submit button');
++  }
++
++  /**
++   * Tests creation of entities.
++   */
++  public function testEntityCreation() {
++    $this->drupalGet($this->formContentAddUrl);
++
++    $this->drupalPostAjaxForm(NULL, [], $this->getButtonName('//input[@type="submit" and @value="Add new user" and @data-drupal-selector="edit-field-user-reference-multiple-actions-ief-add"]'));
++    $this->assertResponse(200, 'Opening new inline form was successful.');
++
++    // TODO: currently this fail. It only works if the form has no error.
++//    $this->drupalPostAjaxForm(NULL, [], $this->getButtonName('//input[@type="submit" and @value="Create user" and @data-drupal-selector="edit-field-user-reference-multiple-form-inline-entity-form-actions-ief-add-save"]'));
++//    $this->assertResponse(200, 'Submitting empty form was successful.');
++//    $this->assertText('Username field is required.', 'Validation failed for empty "Username" field.');
++//    $this->assertText('Password field is required.', 'Validation failed for empty "Password" field.');
++
++    // Create user in IEF.
++    $this->drupalGet($this->formContentAddUrl);
++    $this->drupalPostAjaxForm(NULL, [], $this->getButtonName('//input[@type="submit" and @value="Add new user" and @data-drupal-selector="edit-field-user-reference-multiple-actions-ief-add"]'));
++    $this->assertResponse(200, 'Opening new inline form was successful.');
++
++    $edit = [
++      'name' => 'Doe',
++      'pass[pass1]' => 'mypassword',
++      'pass[pass2]' => 'mypassword',
++      'field_user_reference_multiple[form][inline_entity_form][field_first_name][0][value]' => 'John',
++    ];
++    $this->drupalPostAjaxForm(NULL, $edit, $this->getButtonName('//input[@type="submit" and @value="Create user" and @data-drupal-selector="edit-field-user-reference-multiple-form-inline-entity-form-actions-ief-add-save"]'));
++    $this->assertResponse(200, 'Creating user via inline form was successful.');
++
++    // Tests if correct fields appear in the table.
++    $this->assertTrue((bool) $this->xpath('//td[@class="inline-entity-form-user-label" and contains(.,"Doe")]'), 'Username field appears in the table');
++
++    // Tests if edit and remove buttons appear.
++    $this->assertTrue((bool) $this->xpath('//input[@type="submit" and @value="Edit"]'), 'Edit button appears in the table.');
++    $this->assertTrue((bool) $this->xpath('//input[@type="submit" and @value="Remove"]'), 'Remove button appears in the table.');
++
++    // Test edit functionality.
++    $this->drupalPostAjaxForm(NULL, [], $this->getButtonName('//input[@type="submit" and @value="Edit"]'));
++    $edit = [
++      'name' => 'Another name',
++      'field_user_reference_multiple[form][inline_entity_form][entities][0][form][field_first_name][0][value]' => 'Another first name',
++    ];
++    $this->drupalPostAjaxForm(NULL, $edit, $this->getButtonName('//input[@type="submit" and @value="Update user"]'));
++    $this->assertTrue((bool) $this->xpath('//td[@class="inline-entity-form-user-label" and contains(.,"Another name")]'), 'Username field appears in the table');
++
++    // Create ief_test_user_complex node.
++    $edit = ['title[0][value]' => 'Some title'];
++    $this->drupalPostForm(NULL, $edit, t('Save'));
++    $this->assertResponse(200, 'Saving parent entity was successful.');
++
++    // Checks values of created entities.
++    $node = $this->drupalGetNodeByTitle('Some title');
++    $this->assertTrue($node, 'Created ief_test_user_complex node ' . $node->label());
++    /** @var \Drupal\user\Entity\User $user */
++    $user = $node->get('field_user_reference_multiple')->referencedEntities()[0];
++    $this->assertTrue($user->getAccountName() == 'Another name', 'Username in referenced user set to Another name');
++    $this->assertTrue($user->get('field_first_name')->value == 'Another first name', 'First name in referenced user set to Another first name');
++  }
++
++}
+diff --git a/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.node.ief_test_user_complex.default.yml b/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.node.ief_test_user_complex.default.yml
+new file mode 100644
+index 0000000..fd89ff6
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.node.ief_test_user_complex.default.yml
+@@ -0,0 +1,60 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.node.ief_test_user_complex.field_user_reference_multiple
++    - node.type.ief_test_user_complex
++  module:
++    - inline_entity_form
++id: node.ief_test_user_complex.default
++targetEntityType: node
++bundle: ief_test_user_complex
++mode: default
++content:
++  created:
++    type: datetime_timestamp
++    weight: 10
++    settings: {  }
++    third_party_settings: {  }
++  field_user_reference_multiple:
++    weight: 31
++    settings:
++      form_mode: default
++      label_singular: ''
++      label_plural: ''
++      allow_new: true
++      allow_existing: true
++      match_operator: CONTAINS
++      override_labels: false
++      collapsible: false
++      collapsed: false
++    third_party_settings: {  }
++    type: inline_entity_form_complex
++  promote:
++    type: boolean_checkbox
++    settings:
++      display_label: true
++    weight: 15
++    third_party_settings: {  }
++  sticky:
++    type: boolean_checkbox
++    settings:
++      display_label: true
++    weight: 16
++    third_party_settings: {  }
++  title:
++    type: string_textfield
++    weight: -5
++    settings:
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++  uid:
++    type: entity_reference_autocomplete
++    weight: 5
++    settings:
++      match_operator: CONTAINS
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++hidden: {  }
+diff --git a/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.node.ief_test_user_simple.default.yml b/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.node.ief_test_user_simple.default.yml
+new file mode 100644
+index 0000000..0580ac0
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.node.ief_test_user_simple.default.yml
+@@ -0,0 +1,57 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.node.ief_test_user_simple.field_user_reference_single
++    - node.type.ief_test_user_simple
++  module:
++    - inline_entity_form
++id: node.ief_test_user_simple.default
++targetEntityType: node
++bundle: ief_test_user_simple
++mode: default
++content:
++  created:
++    type: datetime_timestamp
++    weight: 10
++    settings: {  }
++    third_party_settings: {  }
++  field_user_reference_single:
++    weight: 31
++    settings:
++      form_mode: default
++      override_labels: false
++      label_singular: ''
++      label_plural: ''
++      collapsible: false
++      collapsed: false
++    third_party_settings: {  }
++    type: inline_entity_form_simple
++  promote:
++    type: boolean_checkbox
++    settings:
++      display_label: true
++    weight: 15
++    third_party_settings: {  }
++  sticky:
++    type: boolean_checkbox
++    settings:
++      display_label: true
++    weight: 16
++    third_party_settings: {  }
++  title:
++    type: string_textfield
++    weight: -5
++    settings:
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++  uid:
++    type: entity_reference_autocomplete
++    weight: 5
++    settings:
++      match_operator: CONTAINS
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++hidden: {  }
+diff --git a/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.user.user.default.yml b/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.user.user.default.yml
+new file mode 100644
+index 0000000..d281576
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/core.entity_form_display.user.user.default.yml
+@@ -0,0 +1,28 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.user.user.field_first_name
++  module:
++    - user
++id: user.user.default
++targetEntityType: user
++bundle: user
++mode: default
++content:
++  account:
++    weight: -10
++  contact:
++    weight: 5
++  field_first_name:
++    weight: 7
++    settings:
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++    type: string_textfield
++  language:
++    weight: 0
++  timezone:
++    weight: 6
++hidden: {  }
+diff --git a/tests/modules/inline_entity_form_test/config/install/field.field.node.ief_test_user_complex.field_user_reference_multiple.yml b/tests/modules/inline_entity_form_test/config/install/field.field.node.ief_test_user_complex.field_user_reference_multiple.yml
+new file mode 100644
+index 0000000..a651919
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/field.field.node.ief_test_user_complex.field_user_reference_multiple.yml
+@@ -0,0 +1,27 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.node.field_user_reference_multiple
++    - node.type.ief_test_user_complex
++id: node.ief_test_user_complex.field_user_reference_multiple
++field_name: field_user_reference_multiple
++entity_type: node
++bundle: ief_test_user_complex
++label: 'User reference multiple'
++description: ''
++required: false
++translatable: false
++default_value: {  }
++default_value_callback: ''
++settings:
++  handler: 'default:user'
++  handler_settings:
++    include_anonymous: false
++    filter:
++      type: _none
++    target_bundles: null
++    sort:
++      field: _none
++    auto_create: false
++field_type: entity_reference
+diff --git a/tests/modules/inline_entity_form_test/config/install/field.field.node.ief_test_user_simple.field_user_reference_single.yml b/tests/modules/inline_entity_form_test/config/install/field.field.node.ief_test_user_simple.field_user_reference_single.yml
+new file mode 100644
+index 0000000..45a5eb7
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/field.field.node.ief_test_user_simple.field_user_reference_single.yml
+@@ -0,0 +1,27 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.node.field_user_reference_single
++    - node.type.ief_test_user_simple
++id: node.ief_test_user_simple.field_user_reference_single
++field_name: field_user_reference_single
++entity_type: node
++bundle: ief_test_user_simple
++label: 'User reference single'
++description: ''
++required: false
++translatable: false
++default_value: {  }
++default_value_callback: ''
++settings:
++  handler: 'default:user'
++  handler_settings:
++    include_anonymous: false
++    filter:
++      type: _none
++    target_bundles: null
++    sort:
++      field: _none
++    auto_create: false
++field_type: entity_reference
+diff --git a/tests/modules/inline_entity_form_test/config/install/field.field.user.user.field_first_name.yml b/tests/modules/inline_entity_form_test/config/install/field.field.user.user.field_first_name.yml
+new file mode 100644
+index 0000000..afb157d
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/field.field.user.user.field_first_name.yml
+@@ -0,0 +1,19 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.user.field_first_name
++  module:
++    - user
++id: user.user.field_first_name
++field_name: field_first_name
++entity_type: user
++bundle: user
++label: 'First name'
++description: ''
++required: false
++translatable: false
++default_value: {  }
++default_value_callback: ''
++settings: {  }
++field_type: string
+diff --git a/tests/modules/inline_entity_form_test/config/install/field.storage.node.field_user_reference_multiple.yml b/tests/modules/inline_entity_form_test/config/install/field.storage.node.field_user_reference_multiple.yml
+new file mode 100644
+index 0000000..5cba850
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/field.storage.node.field_user_reference_multiple.yml
+@@ -0,0 +1,19 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - node
++    - user
++id: node.field_user_reference_multiple
++field_name: field_user_reference_multiple
++entity_type: node
++type: entity_reference
++settings:
++  target_type: user
++module: core
++locked: false
++cardinality: -1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/tests/modules/inline_entity_form_test/config/install/field.storage.node.field_user_reference_single.yml b/tests/modules/inline_entity_form_test/config/install/field.storage.node.field_user_reference_single.yml
+new file mode 100644
+index 0000000..79ccbef
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/field.storage.node.field_user_reference_single.yml
+@@ -0,0 +1,19 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - node
++    - user
++id: node.field_user_reference_single
++field_name: field_user_reference_single
++entity_type: node
++type: entity_reference
++settings:
++  target_type: user
++module: core
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/tests/modules/inline_entity_form_test/config/install/field.storage.user.field_first_name.yml b/tests/modules/inline_entity_form_test/config/install/field.storage.user.field_first_name.yml
+new file mode 100644
+index 0000000..64b84ab
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/field.storage.user.field_first_name.yml
+@@ -0,0 +1,20 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - user
++id: user.field_first_name
++field_name: field_first_name
++entity_type: user
++type: string
++settings:
++  max_length: 255
++  is_ascii: false
++  case_sensitive: false
++module: core
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/tests/modules/inline_entity_form_test/config/install/node.type.ief_test_user_complex.yml b/tests/modules/inline_entity_form_test/config/install/node.type.ief_test_user_complex.yml
+new file mode 100644
+index 0000000..1a324ef
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/node.type.ief_test_user_complex.yml
+@@ -0,0 +1,9 @@
++langcode: en
++status: true
++name: 'IEF test user complex'
++type: ief_test_user_complex
++description: 'Content type for IEF complex widget testing with user entity type.'
++help: ''
++new_revision: false
++preview_mode: 1
++display_submitted: false
+diff --git a/tests/modules/inline_entity_form_test/config/install/node.type.ief_test_user_simple.yml b/tests/modules/inline_entity_form_test/config/install/node.type.ief_test_user_simple.yml
+new file mode 100644
+index 0000000..4d50f45
+--- /dev/null
++++ b/tests/modules/inline_entity_form_test/config/install/node.type.ief_test_user_simple.yml
+@@ -0,0 +1,9 @@
++langcode: en
++status: true
++name: 'IEF test user simple'
++type: ief_test_user_simple
++description: 'Content type for IEF simple widget testing with user entity type.'
++help: ''
++new_revision: false
++preview_mode: 1
++display_submitted: false
+diff --git a/tests/modules/inline_entity_form_test/inline_entity_form_test.info.yml b/tests/modules/inline_entity_form_test/inline_entity_form_test.info.yml
+index ef89ab3..0e809c4 100644
+--- a/tests/modules/inline_entity_form_test/inline_entity_form_test.info.yml
++++ b/tests/modules/inline_entity_form_test/inline_entity_form_test.info.yml
+@@ -9,3 +9,4 @@ dependencies:
+   - node
+   - file
+   - image
++  - user

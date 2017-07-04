@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parking_pass
+    - node.type.subscription
+id: node.subscription.field_parking_pass
+field_name: field_parking_pass
+entity_type: node
+bundle: subscription
+label: 'Parking Pass'
+description: 'Does this order contain a parking pass?'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

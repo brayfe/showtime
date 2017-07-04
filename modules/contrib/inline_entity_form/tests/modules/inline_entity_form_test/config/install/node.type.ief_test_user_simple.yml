@@ -1,0 +1,9 @@
+langcode: en
+status: true
+name: 'IEF test user simple'
+type: ief_test_user_simple
+description: 'Content type for IEF simple widget testing with user entity type.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

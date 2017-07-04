@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_package_adult
+    - node.type.subscription
+id: node.subscription.field_package_adult
+field_name: field_package_adult
+entity_type: node
+bundle: subscription
+label: Adult
+description: 'The number of adult tickets in this family package.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
