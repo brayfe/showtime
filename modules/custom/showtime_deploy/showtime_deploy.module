@@ -13,11 +13,6 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function showtime_deploy_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'user_register_form' || $form_id == 'user_form') {
-    $form['field_sales_rep']['#states'] = [
-      'visible' => [
-        'input[name="roles[subscriber]"]' => ['checked' => TRUE],
-      ],
-    ];
     $form['field_captain']['#states'] = [
       'visible' => [
         'input[name="roles[sales_rep]"]' => ['checked' => TRUE],
@@ -37,16 +32,18 @@ function showtime_deploy_form_alter(&$form, FormStateInterface $form_state, $for
  * Adds validation on submission values in user form.
  */
 function _validate_role_pyramid(&$form, FormStateInterface $form_state) {
+  $captain = ['field_captain', 0, 'target_id'];
+  $chair = ['field_division_chair', 0, 'target_id'];
+
+  // Grab user roles.
   if ($form_state->hasValue('roles')) {
     $roles = $form_state->getValue('roles');
 
-    if (in_array('subscriber', $roles) && $form_state->getValue('field_sales_rep') != NULL) {
-      $form_state->setErrorByName('field_sales_rep', t("Please list this user's Sales Representative."));
-    }
-    if (in_array('sales_rep', $roles) && $form_state->getValue('field_captain') != NULL) {
+    // Review roles.  Confirm corresponding fields are filled.
+    if (in_array('sales_rep', $roles) && $form_state->getValue($captain) == NULL) {
       $form_state->setErrorByName('field_captain', t("Please list this user's Captain."));
     }
-    if (in_array('captain', $roles) && $form_state->getValue('field_division_chair') != NULL) {
+    if (in_array('captain', $roles) && $form_state->getValue($chair) == NULL) {
       $form_state->setErrorByName('field_division_chair', t("Please list this user's Division Chair."));
     }
   }
