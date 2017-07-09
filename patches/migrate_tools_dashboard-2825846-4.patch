@@ -1,0 +1,235 @@
+diff --git a/migrate_tools.drush.inc b/migrate_tools.drush.inc
+index f982987..54acb7b 100644
+--- a/migrate_tools.drush.inc
++++ b/migrate_tools.drush.inc
+@@ -265,7 +265,7 @@ function _drush_migrate_tools_execute_migration(MigrationInterface $migration, $
+ 
+   if (drush_get_option('execute-dependencies')) {
+     if ($required_IDS = $migration->get('requirements')) {
+-      $manager = \Drupal::service('plugin.manager.config_entity_migration');
++      $manager = \Drupal::service('plugin.manager.migration');
+       $required_migrations = $manager->createInstances($required_IDS);
+       $dependency_options = array_merge($options, ['is_dependency' => TRUE]);
+       array_walk($required_migrations, __FUNCTION__, $dependency_options);
+diff --git a/src/Controller/MessageController.php b/src/Controller/MessageController.php
+index 54a194f..abf921b 100644
+--- a/src/Controller/MessageController.php
++++ b/src/Controller/MessageController.php
+@@ -6,7 +6,7 @@ use Drupal\Component\Utility\Html;
+ use Drupal\Core\Controller\ControllerBase;
+ use Drupal\Core\Database\Connection;
+ use Drupal\migrate\Plugin\MigrationInterface;
+-use Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager;
++use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+@@ -24,9 +24,9 @@ class MessageController extends ControllerBase {
+   /**
+    * Plugin manager for migration plugins.
+    *
+-   * @var \Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager
++   * @var \Drupal\migrate\Plugin\MigrationPluginManagerInterface
+    */
+-  protected $migrationConfigEntityPluginManager;
++  protected $migrationPluginManager;
+ 
+   /**
+    * {@inheritdoc}
+@@ -34,7 +34,7 @@ class MessageController extends ControllerBase {
+   public static function create(ContainerInterface $container) {
+     return new static(
+       $container->get('database'),
+-      $container->get('plugin.manager.config_entity_migration')
++      $container->get('plugin.manager.migration')
+     );
+   }
+ 
+@@ -43,12 +43,12 @@ class MessageController extends ControllerBase {
+    *
+    * @param \Drupal\Core\Database\Connection $database
+    *   A database connection.
+-   * @param \Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager $migration_config_entity_plugin_manager
+-   *   The plugin manager for config entity-based migrations.
++   * @param \Drupal\migrate\Plugin\MigrationPluginManagerInterface $migration_plugin_manager
++   *   The migration plugin manager.
+    */
+-  public function __construct(Connection $database, MigrationConfigEntityPluginManager $migration_config_entity_plugin_manager) {
++  public function __construct(Connection $database, MigrationPluginManagerInterface $migration_plugin_manager) {
+     $this->database = $database;
+-    $this->migrationConfigEntityPluginManager = $migration_config_entity_plugin_manager;
++    $this->migrationPluginManager = $migration_plugin_manager;
+   }
+ 
+   /**
+@@ -84,7 +84,7 @@ class MessageController extends ControllerBase {
+     $rows = [];
+     $classes = static::getLogLevelClassMap();
+     /** @var MigrationInterface $migration */
+-    $migration = $this->migrationConfigEntityPluginManager->createInstance($migration);
++    $migration = $this->migrationPluginManager->createInstance($migration);
+     $source_id_field_names = array_keys($migration->getSourcePlugin()->getIds());
+     $column_number = 1;
+     foreach ($source_id_field_names as $source_id_field_name) {
+diff --git a/src/Controller/MigrationController.php b/src/Controller/MigrationController.php
+index 09ae154..64fbb58 100644
+--- a/src/Controller/MigrationController.php
++++ b/src/Controller/MigrationController.php
+@@ -3,10 +3,10 @@
+ namespace Drupal\migrate_tools\Controller;
+ 
+ use Drupal\Core\Controller\ControllerBase;
+-use Drupal\migrate\Plugin\MigrationInterface;
+ use Drupal\Component\Utility\Xss;
+ use Drupal\Component\Utility\Html;
+-use Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager;
++use Drupal\migrate\Plugin\MigrationInterface;
++use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
+ use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+@@ -18,18 +18,18 @@ class MigrationController extends ControllerBase implements ContainerInjectionIn
+   /**
+    * Plugin manager for migration plugins.
+    *
+-   * @var \Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager
++   * @var \Drupal\migrate\Plugin\MigrationPluginManagerInterface
+    */
+-  protected $migrationConfigEntityPluginManager;
++  protected $migrationPluginManager;
+ 
+   /**
+    * Constructs a new MigrationController object.
+    *
+-   * @param \Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager $migration_config_entity_plugin_manager
++   * @param \Drupal\migrate\Plugin\MigrationPluginManagerInterface $migration_plugin_manager
+    *   The plugin manager for config entity-based migrations.
+    */
+-  public function __construct(MigrationConfigEntityPluginManager $migration_config_entity_plugin_manager) {
+-    $this->migrationConfigEntityPluginManager = $migration_config_entity_plugin_manager;
++  public function __construct(MigrationPluginManagerInterface $migration_plugin_manager) {
++    $this->migrationPluginManager = $migration_plugin_manager;
+   }
+ 
+   /**
+@@ -37,7 +37,7 @@ class MigrationController extends ControllerBase implements ContainerInjectionIn
+    */
+   public static function create(ContainerInterface $container) {
+     return new static(
+-      $container->get('plugin.manager.config_entity_migration')
++      $container->get('plugin.manager.migration')
+     );
+   }
+ 
+@@ -54,8 +54,8 @@ class MigrationController extends ControllerBase implements ContainerInjectionIn
+    */
+   public function overview($migration_group, $migration) {
+ 
+-    /** @var MigrationInterface $migration */
+-    $migration = $this->migrationConfigEntityPluginManager->createInstance($migration);
++    /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
++    $migration = $this->migrationPluginManager->createInstance($migration);
+ 
+     $build['overview'] = [
+       '#type' => 'fieldset',
+@@ -106,8 +106,8 @@ class MigrationController extends ControllerBase implements ContainerInjectionIn
+    */
+   public function source($migration_group, $migration) {
+ 
+-    /** @var MigrationInterface $migration */
+-    $migration = $this->migrationConfigEntityPluginManager->createInstance($migration);
++    /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
++    $migration = $this->migrationPluginManager->createInstance($migration);
+ 
+     // Source field information.
+     $build['source'] = [
+@@ -158,8 +158,8 @@ class MigrationController extends ControllerBase implements ContainerInjectionIn
+    */
+   public function process($migration_group, $migration) {
+ 
+-    /** @var MigrationInterface $migration */
+-    $migration = $this->migrationConfigEntityPluginManager->createInstance($migration);
++    /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
++    $migration = $this->migrationPluginManager->createInstance($migration);
+ 
+     // Process information.
+     $build['process'] = [
+@@ -220,8 +220,8 @@ class MigrationController extends ControllerBase implements ContainerInjectionIn
+    *   A render array as expected by drupal_render().
+    */
+   public function destination($migration_group, $migration) {
+-    /** @var MigrationInterface $migration */
+-    $migration = $this->migrationConfigEntityPluginManager->createInstance($migration);
++    /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
++    $migration = $this->migrationPluginManager->createInstance($migration);
+ 
+     // Destination field information.
+     $build['destination'] = [
+diff --git a/src/Controller/MigrationListBuilder.php b/src/Controller/MigrationListBuilder.php
+index 16ee84f..035195c 100644
+--- a/src/Controller/MigrationListBuilder.php
++++ b/src/Controller/MigrationListBuilder.php
+@@ -8,11 +8,10 @@ use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Core\Entity\EntityStorageInterface;
+ use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\Core\Routing\CurrentRouteMatch;
++use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
+ use Drupal\migrate_plus\Entity\MigrationGroup;
+-use Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager;
+ use Drupal\Core\Url;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+-use Drupal\Core\Datetime\DateFormatter;
+ 
+ /**
+  * Provides a listing of migration entities in a given group.
+@@ -33,9 +32,9 @@ class MigrationListBuilder extends ConfigEntityListBuilder implements EntityHand
+   /**
+    * Plugin manager for migration plugins.
+    *
+-   * @var \Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager
++   * @var \Drupal\migrate\Plugin\MigrationPluginManagerInterface
+    */
+-  protected $migrationConfigEntityPluginManager;
++  protected $migrationPluginManager;
+ 
+   /**
+    * Constructs a new EntityListBuilder object.
+@@ -46,13 +45,13 @@ class MigrationListBuilder extends ConfigEntityListBuilder implements EntityHand
+    *   The entity storage class.
+    * @param \Drupal\Core\Routing\CurrentRouteMatch $current_route_match
+    *   The current route match service.
+-   * @param \Drupal\migrate_plus\Plugin\MigrationConfigEntityPluginManager $migration_config_entity_plugin_manager
++   * @param \Drupal\migrate\Plugin\MigrationPluginManagerInterface $migration_plugin_manager
+    *   The plugin manager for config entity-based migrations.
+    */
+-  public function __construct(EntityTypeInterface $entity_type, EntityStorageInterface $storage, CurrentRouteMatch $current_route_match, MigrationConfigEntityPluginManager $migration_config_entity_plugin_manager) {
++  public function __construct(EntityTypeInterface $entity_type, EntityStorageInterface $storage, CurrentRouteMatch $current_route_match, MigrationPluginManagerInterface $migration_plugin_manager) {
+     parent::__construct($entity_type, $storage);
+     $this->currentRouteMatch = $current_route_match;
+-    $this->migrationConfigEntityPluginManager = $migration_config_entity_plugin_manager;
++    $this->migrationPluginManager = $migration_plugin_manager;
+   }
+ 
+   /**
+@@ -63,7 +62,7 @@ class MigrationListBuilder extends ConfigEntityListBuilder implements EntityHand
+       $entity_type,
+       $container->get('entity.manager')->getStorage($entity_type->id()),
+       $container->get('current_route_match'),
+-      $container->get('plugin.manager.config_entity_migration')
++      $container->get('plugin.manager.migration')
+     );
+   }
+ 
+@@ -123,10 +122,10 @@ class MigrationListBuilder extends ConfigEntityListBuilder implements EntityHand
+    * @return array
+    *   A render array of the table row for displaying the plugin information.
+    *
+-   * @see Drupal\Core\Entity\EntityListController::render()
++   * @see \Drupal\Core\Entity\EntityListController::render()
+    */
+   public function buildRow(EntityInterface $migration_entity) {
+-    $migration = $this->migrationConfigEntityPluginManager->createInstance($migration_entity->id());
++    $migration = $this->migrationPluginManager->createInstance($migration_entity->id());
+     $migration_group = $migration->get('migration_group');
+     if (!$migration_group) {
+       $migration_group = 'default';

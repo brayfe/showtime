@@ -1,0 +1,97 @@
+id: captains
+label: Import Captains
+migration_group: users
+
+source:
+  plugin: csv
+  # Full path to the file.
+  path: 'csvs/captains.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  keys:
+    - id
+  # Here we identify the columns of interest in the source file.
+  # Each numeric key is the 0-based index of the column.
+  # For each column, the key below is the field name assigned to
+  # the data on import, to be used in field mappings below.
+  # The value is a user-friendly string for display by the
+  # migration UI.
+  column_names:
+    0:
+      id: 'Unique Id'
+    1:
+      last_name: 'Last Name'
+    2:
+      first_name: 'First Name'
+    3:
+      address: 'Address'
+    4:
+      city: 'City'
+    5:
+      state: 'State'
+    6:
+      zip: 'Zipcode'
+    7:
+      phone: 'Phone Number'
+    8:
+      email: 'Email'
+    9:
+      roles: 'Roles'
+    10:
+      chair_id: 'Division Chair ID'
+
+destination:
+  plugin: entity:user
+
+process:
+  name:
+    -
+      plugin: strip_amp
+      source: first_name
+    -
+      plugin: concat
+      source:
+        -
+        - last_name
+      delimiter: '.'
+    -
+      plugin: callback
+      callable: strtolower
+  mail: email
+  status:
+    plugin: default_value
+    default_value: 1
+  roles:
+    plugin: explode
+    delimiter: '/'
+    source: roles
+  field_first_name: first_name
+  field_last_name: last_name
+  field_phone: phone
+  'field_address/country_code':
+    plugin: default_value
+    default_value: US
+  'field_address/langcode':
+    plugin: default_value
+    default_value: en
+  'field_address/address_line1': address
+  'field_address/locality': city
+  'field_address/administrative_area': state
+  'field_address/postal_code': zip
+  field_division_chair:
+    plugin: migration
+    migration: division_chairs
+    source: chair_id
+
+migration_dependencies:
+  required:
+      - division_chairs
+
+dependencies:
+  enforced:
+    module:
+      - showtime_user_import

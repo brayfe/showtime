@@ -1,0 +1,14 @@
+{
+  "name": "drupal/showtime_user_import",
+  "type": "drupal-module",
+  "description": "Used to import users.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/showtime_user_import",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/showtime_user_import",
+    "source": "http://cgit.drupalcode.org/showtime_user_import"
+  },
+  "require": { }
+}

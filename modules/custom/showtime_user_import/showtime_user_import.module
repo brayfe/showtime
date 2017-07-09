@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains showtime_user_import.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\migrate\Row;
+use Drupal\migrate\Plugin\MigrateSourceInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
+
+/**
+ * Implements hook_migrate_prepare_row().
+ */
+function showtime_user_import_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+  if ($migration->id() == 'sales_reps') {
+    if ($row->getSourceProperty('chair_id') == NULL) {
+      $process = $migration->getProcess();
+      $process['field_captain'][0]['migration'] = 'captains';
+      $process['field_captain'][0]['source'] = 'captain_id';
+      $migration->setProcess($process);
+    }
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function showtime_user_import_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the showtime_user_import module.
+    case 'help.page.showtime_user_import':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Used to import users.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

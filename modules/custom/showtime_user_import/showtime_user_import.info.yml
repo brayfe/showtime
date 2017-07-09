@@ -1,0 +1,16 @@
+name: User Import
+type: module
+description: Used to import users.
+core: 8.x
+package: Showtime
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools
+
+config_devel:
+  - migrate_plus.migration_group.users
+  - migrate_plus.migration.division_chairs
+  - migrate_plus.migration.captains
+  - migrate_plus.migration.sales_reps
+  - migrate_plus.migration.subscribers

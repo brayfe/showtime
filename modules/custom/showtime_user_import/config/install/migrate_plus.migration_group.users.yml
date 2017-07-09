@@ -1,0 +1,14 @@
+id: users
+
+# A human-friendly label for the group.
+label: 'Showtime Users'
+
+# More information about the group.
+description: 'The users within the Showtime Application.'
+
+source_type: CSVs
+
+dependencies:
+  enforced:
+    module:
+      - showtime_user_import
