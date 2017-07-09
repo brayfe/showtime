@@ -1,8 +1,8 @@
 node_type_subscription_status: '1'
-node_type_subscription_pattern: '[node:field_order_season]: [node:field_subscriber:entity:field_first_name] [node:field_subscriber:entity:field_last_name]'
+node_type_subscription_pattern: '[node:field_order_season]: [node:nid] - [node:field_subscriber:entity:field_first_name] [node:field_subscriber:entity:field_last_name]'
 node_type_subscription_php: 0
 submit: 'Save configuration'
-form_build_id: form-pTOMurQCsrCm5SveJ4COtU27jaIDjP8oIKecjMiQ2GM
-form_token: MGp7z2a7pRcZhHYzvGcVbDQSG_A9Qk_D-NnbM86DIcw
+form_build_id: form-uSh0UMe1zYaTgf_6zk2F1hPaGWa6FY7Dql0IlkHyFJQ
+form_token: '-0ZOj8RVyermRTQ11qajgQgL1F5gmmi4DQaFff5VZoM'
 form_id: auto_entitylabel_settings_form
 op: 'Save configuration'

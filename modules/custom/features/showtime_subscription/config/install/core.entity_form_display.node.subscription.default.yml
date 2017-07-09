@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_form_mode.user.register
     - field.field.node.subscription.field_collected
+    - field.field.node.subscription.field_donation
     - field.field.node.subscription.field_family_package
     - field.field.node.subscription.field_new_subscriber
     - field.field.node.subscription.field_order_season
@@ -56,15 +57,22 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_collected:
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_donation:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   field_family_package:
     weight: 7
@@ -142,7 +150,7 @@ content:
     region: content
   path:
     type: path
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -156,7 +164,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
