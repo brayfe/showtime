@@ -19,13 +19,14 @@ class StripAmp extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    $string = $value;
-
-    if (strpos($value, '&') !== FALSE) {
-      $result = explode('&', $value);
-      $result = array_map('trim', $result);
+    $string = trim($value);
+    if (strpos($value, ' ') !== FALSE) {
+      // Replace all non-alpha numberic characters.
+      $string = preg_replace("/[^A-Za-z0-9 ]/", '.', $string);
+      // Replace " and " with ".".
+      $string = str_replace(' and ', '.', $string);
       // Remove space from within words. Ex: Mary Lou.
-      $string = implode(".", $result);
+      $string = str_replace(' ', '.', $string);
     }
 
     return $string;
