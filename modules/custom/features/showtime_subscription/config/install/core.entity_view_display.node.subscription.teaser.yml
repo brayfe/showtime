@@ -14,7 +14,6 @@ dependencies:
     - field.field.node.subscription.field_sales_representative
     - field.field.node.subscription.field_single_adult
     - field.field.node.subscription.field_single_youth
-    - field.field.node.subscription.field_subscriber
     - node.type.subscription
   module:
     - user
@@ -40,4 +39,3 @@ hidden:
   field_sales_representative: true
   field_single_adult: true
   field_single_youth: true
-  field_subscriber: true

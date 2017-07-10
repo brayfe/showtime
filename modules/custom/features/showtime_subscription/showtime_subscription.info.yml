@@ -3,6 +3,7 @@ description: 'Provides Subscription content type and related configuration.'
 type: module
 core: 8.x
 dependencies:
+  - address
   - auto_entitylabel
   - field
   - field_group
@@ -12,5 +13,6 @@ dependencies:
   - options
   - path
   - taxonomy
+  - telephone
   - user
 version: 8.x-1.0

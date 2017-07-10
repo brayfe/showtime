@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.user.register
     - field.field.node.subscription.field_collected
     - field.field.node.subscription.field_donation
     - field.field.node.subscription.field_family_package
@@ -14,12 +13,17 @@ dependencies:
     - field.field.node.subscription.field_sales_representative
     - field.field.node.subscription.field_single_adult
     - field.field.node.subscription.field_single_youth
-    - field.field.node.subscription.field_subscriber
+    - field.field.node.subscription.field_subscriber_address
+    - field.field.node.subscription.field_subscriber_email
+    - field.field.node.subscription.field_subscriber_first_name
+    - field.field.node.subscription.field_subscriber_last_name
+    - field.field.node.subscription.field_subscriber_phone
     - node.type.subscription
   module:
+    - address
     - field_group
-    - inline_entity_form
     - path
+    - telephone
 third_party_settings:
   field_group:
     group_single_tickets:
@@ -50,6 +54,23 @@ third_party_settings:
         id: ''
         classes: ''
       label: 'Family Package'
+    group_subscriber:
+      children:
+        - field_new_subscriber
+        - field_subscriber_first_name
+        - field_subscriber_last_name
+        - field_subscriber_address
+        - field_subscriber_email
+        - field_subscriber_phone
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: true
+        required_fields: true
+      label: Subscriber
 id: node.subscription.default
 targetEntityType: node
 bundle: subscription
@@ -81,7 +102,7 @@ content:
     type: options_buttons
     region: content
   field_new_subscriber:
-    weight: 3
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -135,18 +156,43 @@ content:
     third_party_settings: {  }
     type: number
     region: content
-  field_subscriber:
-    weight: 2
+  field_subscriber_address:
+    weight: 5
     settings:
-      form_mode: register
-      override_labels: true
-      label_singular: Subscriber
-      label_plural: Subscribers
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
+      default_country: null
     third_party_settings: {  }
-    type: inline_entity_form_complex
+    type: address_default
+    region: content
+  field_subscriber_email:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_subscriber_first_name:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_subscriber_last_name:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_subscriber_phone:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
     region: content
   path:
     type: path

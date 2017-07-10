@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subscriber_first_name
+    - node.type.subscription
+id: node.subscription.field_subscriber_first_name
+field_name: field_subscriber_first_name
+entity_type: node
+bundle: subscription
+label: 'Subscriber First Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
