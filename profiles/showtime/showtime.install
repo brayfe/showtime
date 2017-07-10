@@ -20,6 +20,16 @@ function showtime_install() {
   $user->roles[] = 'administrator';
   $user->save();
 
+  // Create default Sales Rep user.
+  $user = User::create();
+  $user->setPassword("password");
+  $user->enforceIsNew();
+  $user->setEmail("hdq@showtimeep.com");
+  $user->setUsername("hdq");
+  $user->addRole('sales_rep');
+  $user->activate();
+  $user->save();
+
   // Set the default and admin theme.
   \Drupal::configFactory()
     ->getEditable('system.theme')

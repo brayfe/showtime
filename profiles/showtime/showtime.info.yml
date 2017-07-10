@@ -43,7 +43,6 @@ dependencies:
   - admin_toolbar
   - address
   - config_update
-  - feeds
   - features
   - features_ui
 

@@ -37,8 +37,8 @@ source:
       zip: 'Zipcode'
     7:
       phone: 'Phone Number'
-    # 8:
-    #   email: 'Email'
+    8:
+      email: 'Email'
 
 destination:
   plugin: entity:user
@@ -57,7 +57,7 @@ process:
     -
       plugin: callback
       callable: strtolower
-  # mail: email
+  mail: email
   status:
     plugin: default_value
     default_value: 1
