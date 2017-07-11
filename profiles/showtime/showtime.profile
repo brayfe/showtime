@@ -72,6 +72,8 @@ function showtime_install_module($module) {
 function showtime_install_terms(array &$install_state) {
   $vid = 'season';
   $terms = [
+    '2014 - 2015',
+    '2015 - 2016',
     '2016 - 2017',
     '2017 - 2018',
   ];
