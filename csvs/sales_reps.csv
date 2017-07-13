@@ -4,12 +4,12 @@ ID,Last Name,First Name,Address,City,State,Zip Code,Telephone,Email,Roles,Captai
 3,Avila,David and Becky,9728 Dyer St.,El Paso,TX,79924,(915) 755-6089,northeastprinting@yahoo.com,sales_rep,,4
 4,Bogel,Gloria,435 S Mesa Hills Dr.,El Paso,TX,79912,(915) 833-3332,,sales_rep,,2
 5,Bowen,Betty,6228 Constellation,El Paso,TX,79912,(915) 584-6750,,sales_rep,1,
-6,Bray,Kendra and Mark-Thomas,9003 Virgo Lane,El Paso,TX,79904-1000,(915) 751-8902,kbray@elp.rr.com,sales_rep,,4
+6,Bray,Kendra & Mark-Thomas,9003 Virgo Lane,El Paso,TX,79904-1000,(915) 751-8902,kbray@elp.rr.com,sales_rep,,4
 7,Brink,Lucille,801 Live Oak,El Paso,TX,79932,(915) 581-1325,lhbrink801@sbcglobal.net,sales_rep,,2
 8,Chavez,Junie,1469 Sara Danielle Pl.,El Paso,TX,79936,(915) 274-1789,junie_chavez@yahoo.com,sales_rep,,3
 9,Corbin,Elizabeth,6000 Imperial Ridge Dr.,El Paso,TX,79912-7460,(915) 726-0535,,sales_rep,,1
 10,Damon,Harriet,3316 Tyrone Rd.,El Paso,TX,79925,(915) 591-4448,hdamon@sbcglobal.net,sales_rep,,3
-11,Graham,Ray and Carmen Olivas-,10142 Stoneway Dr.,El Paso,TX,79925,(915) 491-7020,carmengraham@sbcglobal.net,sales_rep,,3
+11,Graham,Ray and Carmen Olivas,10142 Stoneway Dr.,El Paso,TX,79925,(915) 491-7020,carmengraham@sbcglobal.net,sales_rep,,3
 12,Heaton,Sue,3225 Itasca,El Paso,TX,79936,(915) 598-3259,sueheaton@sbcglobal.net,sales_rep,,3
 13,Hill,Cathie,6161 Doniphan #161,El Paso,TX,79932-1247,(915) 584-1201,chill86@juno.com,sales_rep,,1
 14,Hodinh,Jean,6228 Constellation,El Paso,TX,79912,(915) 584-6740,,sales_rep,1,
@@ -27,7 +27,7 @@ ID,Last Name,First Name,Address,City,State,Zip Code,Telephone,Email,Roles,Captai
 26,Burdick,Byrl Hunt,5507 Oakbriar,El Paso,TX,79932,(915) 234-5171,hunt@websitescenes.com,,,
 27,DeFrank,Jerry,408 Pendale Rd.,El Paso,TX,79907,(915) 859-5279,jdefrank@elp.rr.com,,,
 28,Desautels,Lanny,10652 Janway,El Paso,TX,79935,(915) 598-4443,lanny9859@aol.com,,,
-29,Dominik,William (Bill),831 Anthony St,Canutillo,TX,79835,915-877-3319,bill.dominik@noemail.com,,,
+29,Dominik,William,831 Anthony St,Canutillo,TX,79835,915-877-3319,bill.dominik@noemail.com,,,
 30,Gonzalez,Nino,359 Francis Street,El Paso,TX,79905,(915) 731-4626,nino@elp.r.com,,,
 31,Healy,Boots,7218 Meriden Lane,El Paso,TX,79912-1532,(915) 584-3126,bootsohealy@gmail.com,,,
 32,Hernandez,Alicia,801 Ellis,El Paso,TX,79903,(915) 566-2628,aliciahernandez@showtimeelpaso.com,,,

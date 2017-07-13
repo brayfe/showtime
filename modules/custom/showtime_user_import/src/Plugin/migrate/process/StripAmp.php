@@ -21,10 +21,15 @@ class StripAmp extends ProcessPluginBase {
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $string = trim($value);
     if (strpos($value, ' ') !== FALSE) {
-      // Replace all non-alpha numberic characters.
-      $string = preg_replace("/[^A-Za-z0-9 ]/", '.', $string);
       // Replace " and " with ".".
       $string = str_replace(' and ', '.', $string);
+
+      // Replace " & " with ".".
+      $string = str_replace(' & ', '.', $string);
+
+      // Replace all non-alpha numberic characters.
+      $string = preg_replace("/[^A-Za-z0-9 ]/", '.', $string);
+
       // Remove space from within words. Ex: Mary Lou.
       $string = str_replace(' ', '.', $string);
     }

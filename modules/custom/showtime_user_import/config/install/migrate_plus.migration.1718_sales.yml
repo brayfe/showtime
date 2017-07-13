@@ -1,0 +1,121 @@
+id: 1718_sales
+label: Import Ticket Sales from 2017-2018
+migration_group: sales
+
+source:
+  plugin: csv
+  # Full path to the file.
+  path: 'csvs/17-18_sales.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    0:
+      id: 'Unique Id'
+    1:
+      sales_rep: 'Sales Representative'
+    2:
+      first_name: 'First Name'
+    3:
+      last_name: 'Last Name'
+    4:
+      email: 'Email'
+    5:
+      phone: 'Phone Number'
+    6:
+      address: 'Address'
+    7:
+      city: 'City'
+    8:
+      state: 'State'
+    9:
+      zip: 'Zipcode'
+    10:
+      new: 'First-time Customer'
+    11:
+      offline: 'Offline/Online'
+    12:
+      parking: 'Parking Passes'
+    13:
+      adult_ticket: 'Adult Ticket'
+    14:
+      family_plan: 'Family Plan'
+    15:
+      fp_adult: 'Family Plan - Adult'
+    16:
+      fp_child: 'Family Plan - Child'
+
+destination:
+  plugin: entity:node
+
+process:
+  type:
+    plugin: default_value
+    default_value: subscription
+  status:
+    plugin: default_value
+    default_value: 1
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 1
+  title:
+    plugin: concat
+    source:
+      - first_name
+      - last_name
+    delimiter: ' '
+  field_order_season:
+    plugin: default_value
+    default_value: 4
+  field_new_subscriber:
+    plugin: static_map
+    source: new
+    map:
+      # from: to
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_subscriber_first_name: first_name
+  field_subscriber_last_name: last_name
+  field_subscriber_email: email
+  field_subscriber_phone: phone
+  'field_subscriber_address/country_code':
+    plugin: default_value
+    default_value: US
+  'field_subscriber_address/langcode':
+    plugin: default_value
+    default_value: en
+  'field_subscriber_address/address_line1': address
+  'field_subscriber_address/locality': city
+  'field_subscriber_address/administrative_area': state
+  'field_subscriber_address/postal_code': zip
+  field_sales_representative:
+    -
+      plugin: strip_amp
+      source: sales_rep
+    -
+      plugin: rep_lookup
+  field_single_adult: adult_ticket
+  field_family_package: family_plan
+  field_package_adult: fp_adult
+  field_package_child: fp_child
+  field_parking_pass: parking
+  field_collected:
+    plugin: static_map
+    source: offline
+    map:
+      'TRUE': 0
+    default_value: 1
+
+dependencies:
+  enforced:
+    module:
+      - showtime_user_import

@@ -1,0 +1,10 @@
+id: sales
+label: 'Showtime Ticket Sales'
+description: 'The ticket sales from the Showtime Application.'
+
+source_type: CSVs
+
+dependencies:
+  enforced:
+    module:
+      - showtime_user_import
