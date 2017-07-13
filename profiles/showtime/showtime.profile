@@ -43,7 +43,6 @@ function showtime_install_tasks_alter(array &$tasks, array $install_state) {
 function showtime_install_extensions(array &$install_state) {
   $batch = [];
   $modules = [
-    'showtime_user',
     'showtime_deploy',
     'showtime_subscription',
     'showtime_subscription_listing',

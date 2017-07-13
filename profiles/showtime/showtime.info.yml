@@ -37,6 +37,7 @@ dependencies:
   - telephone
   - text
   - toolbar
+  - user
   - views
   - views_ui
   # contrib
@@ -45,6 +46,9 @@ dependencies:
   - config_update
   - features
   - features_ui
+  - address
+  - field
+  - field_group
 
 
 themes:
