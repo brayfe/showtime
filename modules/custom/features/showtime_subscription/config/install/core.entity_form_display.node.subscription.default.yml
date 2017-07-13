@@ -36,7 +36,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: false
+        open: true
         required_fields: true
       label: 'Single Tickets'
     group_family_package:
@@ -86,7 +86,7 @@ content:
     weight: 9
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   field_donation:
     weight: 8
