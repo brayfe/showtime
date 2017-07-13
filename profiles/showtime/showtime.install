@@ -26,6 +26,8 @@ function showtime_install() {
   $user->enforceIsNew();
   $user->setEmail("hdq@showtimeep.com");
   $user->setUsername("hdq.hdq");
+  $user->set('field_first_name', 'HDQ');
+  $user->set('field_last_name', 'HDQ');
   $user->addRole('sales_rep');
   $user->addRole('captain');
   $user->addRole('chair');
