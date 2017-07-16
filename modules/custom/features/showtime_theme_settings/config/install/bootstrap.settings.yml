@@ -1,0 +1,19 @@
+schemas:
+  bootstrap: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: '/themes/bootstrap/favicon.ico'
+  use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: false
+  node_user_picture: true
+logo:
+  path: ''
+  url: ''
+  use_default: true
+cdn_jsdelivr_theme: superhero
+table_responsive: '-1'
+table: ''

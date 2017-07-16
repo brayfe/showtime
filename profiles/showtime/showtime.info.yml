@@ -53,4 +53,5 @@ dependencies:
 
 themes:
   - bartik
+  - bootstrap
   - adminimal_theme
