@@ -15,7 +15,7 @@ ID,Last Name,First Name,Address,City,State,Zip Code,Telephone,Email,Roles,Captai
 14,Hodinh,Jean,6228 Constellation,El Paso,TX,79912,(915) 584-6740,,sales_rep,1,
 15,Limones,Winona,3121 Bert Yancey,El Paso,TX,79936,(915) 593-5317,wnona@aol.com,sales_rep,,3
 16,McClusky,Bob,1655 Janet Coles Ln.,El Paso,TX,79936,(915) 849-1775,rcmcclusky@msn.com,sales_rep,,3
-17,Meriwether,Dale,1925 Trawood Dr .#36,El Paso,TX,79936,(915) 592-5361,dalevm@sbcglobal.net,sales_rep,,3
+17,Meriwether,Dale,1925 Trawood Dr. #36,El Paso,TX,79936,(915) 592-5361,dalevm@sbcglobal.net,sales_rep,,3
 18,Murtland,Dick & Pat,7304 Good Samaritan #216,El Paso,TX,79912,(915) 490-8096,richard.murtland@sbcglobal.net,sales_rep,1,
 19,Newman,Beth,9852 Goby,El Paso,TX,79924,(915) 422-5542,foxyladyjb56@gmail.com,sales_rep,,4
 20,Parham,Sue,6 Cielo Dorado,Anthony,NM,88021,(915) 584-4092,ms.parham@sbcglobal.net,sales_rep,,1
@@ -23,17 +23,20 @@ ID,Last Name,First Name,Address,City,State,Zip Code,Telephone,Email,Roles,Captai
 22,Sanchez,Sue,1353 Backus,El Paso,TX,79925,(915) 590-3512,,sales_rep,2,
 23,Siros,Nina,1208 Devonshire,El Paso,TX,79925,(915) 778-5926,ninaru@elp.rr.com,sales_rep,,3
 24,Williamson,Verena,PO Box 1821,Santa Teresa,NM,88008-1821,(575) 874-3433,,sales_rep,,2
-25,Askenazi,Shirleen,6352 Calle Placido,El Paso,TX,79912,(915) 203-2952,shirleen@askenazi.com,,,
-26,Burdick,Byrl Hunt,5507 Oakbriar,El Paso,TX,79932,(915) 234-5171,hunt@websitescenes.com,,,
-27,DeFrank,Jerry,408 Pendale Rd.,El Paso,TX,79907,(915) 859-5279,jdefrank@elp.rr.com,,,
-28,Desautels,Lanny,10652 Janway,El Paso,TX,79935,(915) 598-4443,lanny9859@aol.com,,,
-29,Dominik,William,831 Anthony St,Canutillo,TX,79835,915-877-3319,bill.dominik@noemail.com,,,
-30,Gonzalez,Nino,359 Francis Street,El Paso,TX,79905,(915) 731-4626,nino@elp.r.com,,,
-31,Healy,Boots,7218 Meriden Lane,El Paso,TX,79912-1532,(915) 584-3126,bootsohealy@gmail.com,,,
-32,Hernandez,Alicia,801 Ellis,El Paso,TX,79903,(915) 566-2628,aliciahernandez@showtimeelpaso.com,,,
-33,Ivey,Carol,9311 Vicksburg Dr.,El Paso,TX,79924,(915) 929-4051,carolivey@showtimeelpaso.com,,,
-34,Powell,Janine,1109 Chiracahua,El Paso,TX,79912-1130,(915) 584-4647,janinepowell@showtimeelpaso.com,,,
-35,Rice,Louise,634 Copperfield Ln,El Paso,TX,79912,(915) 833-8496,louiserice@showtimeelpaso.com,,,
-36,Sanchez,Marisa,11117 Ilan Ramon Pl.,El Paso,TX,79934,(915) 539-7976,mari.sanchez25@hotmail.com,,,
-37,Torres,David,1628 Camino Bello,El Paso,TX,79902,(915) 532-4000,wwjdrealtor@aol.com,,,
-38,Wickline,Bill,10021 Goliad Dr.,El Paso,TX,79924,(915) 755-3030,billyums@earthlink.net,,,
+25,Askenazi,Shirleen,6352 Calle Placido,El Paso,TX,79912,(915) 203-2952,shirleen@askenazi.com,sales_rep,,
+26,Burdick,Byrl Hunt,5507 Oakbriar,El Paso,TX,79932,(915) 234-5171,hunt@websitescenes.com,sales_rep,,
+27,DeFrank,Jerry,408 Pendale Rd.,El Paso,TX,79907,(915) 859-5279,jdefrank@elp.rr.com,sales_rep,,
+28,Desautels,Lanny,10652 Janway,El Paso,TX,79935,(915) 598-4443,lanny9859@aol.com,sales_rep,,
+29,Dominik,William,831 Anthony St,Canutillo,TX,79835,915-877-3319,bill.dominik@noemail.com,sales_rep,,
+30,Gonzalez,Nino,359 Francis Street,El Paso,TX,79905,(915) 731-4626,nino@elp.r.com,sales_rep,,
+31,Healy,Boots,7218 Meriden Lane,El Paso,TX,79912-1532,(915) 584-3126,bootsohealy@gmail.com,sales_rep,,
+32,Hernandez,Alicia,801 Ellis,El Paso,TX,79903,(915) 566-2628,aliciahernandez@showtimeelpaso.com,sales_rep,,
+33,Ivey,Carol,9311 Vicksburg Dr.,El Paso,TX,79924,(915) 929-4051,carolivey@showtimeelpaso.com,sales_rep,,
+34,Powell,Janine,1109 Chiracahua,El Paso,TX,79912-1130,(915) 584-4647,janinepowell@showtimeelpaso.com,sales_rep,,
+35,Rice,Louise,634 Copperfield Ln,El Paso,TX,79912,(915) 833-8496,louiserice@showtimeelpaso.com,sales_rep,,
+36,Sanchez,Marisa,11117 Ilan Ramon Pl.,El Paso,TX,79934,(915) 539-7976,mari.sanchez25@hotmail.com,sales_rep,,
+37,Torres,David,1628 Camino Bello,El Paso,TX,79902,(915) 532-4000,wwjdrealtor@aol.com,sales_rep,,
+38,Wickline,Bill,10021 Goliad Dr.,El Paso,TX,79924,(915) 755-3030,billyums@earthlink.net,sales_rep,,
+39,Zanetell,Myrna,812 Live Oak Dr,El Paso,TX,79932,(915) 833-5108,,sales_rep,,
+40,Paredes,Carmen,3210 Taylor Ave,El Paso,TX,79930,(915) 565-8335,mparedes2@att.net,sales_rep,,
+41,Lockett,Dorothy D,10044 Manitoba St,El Paso,TX,79924,(915) 551-7461,,sales_rep,,
