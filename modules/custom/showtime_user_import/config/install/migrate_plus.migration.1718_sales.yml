@@ -49,6 +49,8 @@ source:
       fp_adult: 'Family Plan - Adult'
     16:
       fp_child: 'Family Plan - Child'
+    17:
+      child_ticket: 'Youth Ticket'
 
 destination:
   plugin: entity:node
@@ -104,6 +106,7 @@ process:
     -
       plugin: rep_lookup
   field_single_adult: adult_ticket
+  field_single_youth: child_ticket
   field_family_package: family_plan
   field_package_adult: fp_adult
   field_package_child: fp_child

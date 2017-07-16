@@ -46,9 +46,9 @@ dependencies:
   - config_update
   - features
   - features_ui
-  - address
   - field
   - field_group
+  - token
 
 
 themes:
