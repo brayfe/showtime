@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.subs_by_rep
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap
+id: views_block__reps_block_2
+theme: bootstrap
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:subs_by_rep-block_2'
+settings:
+  id: 'views_block:subs_by_rep-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/subs-by-rep*'
+    negate: false
+    context_mapping: {  }

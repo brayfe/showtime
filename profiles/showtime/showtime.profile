@@ -44,6 +44,7 @@ function showtime_install_extensions(array &$install_state) {
   $batch = [];
   $modules = [
     'showtime_deploy',
+    'showtime_subs_rep',
     'showtime_subscription',
     'showtime_subscription_listing',
     'showtime_theme_settings',

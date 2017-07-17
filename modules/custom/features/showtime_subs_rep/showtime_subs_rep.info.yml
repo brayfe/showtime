@@ -1,0 +1,14 @@
+name: 'Subscribers by Rep'
+description: 'The listing of Subscribers based on a Sales Representative.'
+type: module
+core: 8.x
+dependencies:
+  - address
+  - block
+  - node
+  - showtime_subscription
+  - system
+  - taxonomy
+  - user
+  - views
+version: 8.x-1.0

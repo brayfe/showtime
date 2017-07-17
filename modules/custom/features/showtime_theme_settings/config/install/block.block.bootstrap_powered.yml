@@ -7,7 +7,7 @@ dependencies:
     - bootstrap
 id: bootstrap_powered
 theme: bootstrap
-region: -1
+region: navigation
 weight: -7
 provider: null
 plugin: system_powered_by_block
