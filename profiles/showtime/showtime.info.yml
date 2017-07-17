@@ -44,10 +44,12 @@ dependencies:
   - admin_toolbar
   - address
   - config_update
+  - ctools
   - features
   - features_ui
   - field
   - field_group
+  - pathauto
   - token
 
 
