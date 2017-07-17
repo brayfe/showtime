@@ -55,15 +55,84 @@ display:
           items_per_page: null
           offset: 0
       style:
-        type: default
+        type: table
         options:
-          grouping:
-            -
-              field: field_order_season
-              rendered: true
-              rendered_strip: false
+          grouping: {  }
           row_class: ''
           default_row_class: true
+          override: true
+          sticky: false
+          caption: 'Ticket Counts'
+          summary: ''
+          description: ''
+          columns:
+            field_order_season: field_order_season
+            type: type
+            field_single_adult: field_single_adult
+            field_single_youth: field_single_youth
+            field_family_package: field_family_package
+            field_package_adult: field_package_adult
+            field_package_child: field_package_child
+            field_parking_pass: field_parking_pass
+          info:
+            field_order_season:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            type:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: ''
+            field_single_adult:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_single_youth:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_family_package:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_package_adult:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_package_child:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_parking_pass:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: field_order_season
+          empty_table: false
       row:
         type: fields
       fields:
@@ -74,8 +143,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: true
+          label: 'Order Season'
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -685,11 +754,12 @@ display:
         operator: AND
         groups: {  }
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -713,11 +783,12 @@ display:
         context: '0'
         menu_name: tools
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
