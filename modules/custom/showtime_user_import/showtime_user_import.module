@@ -15,10 +15,15 @@ use Drupal\migrate\Plugin\MigrationInterface;
  */
 function showtime_user_import_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
   if ($migration->id() == 'sales_reps') {
-    if ($row->getSourceProperty('chair_id') == NULL) {
-      $process = $migration->getProcess();
+    $process = $migration->getProcess();
+    if (!$row->getSourceProperty('chair_id')) {
       $process['field_captain'][0]['migration'] = 'captains';
       $process['field_captain'][0]['source'] = 'captain_id';
+      $migration->setProcess($process);
+    }
+    else {
+      $process['field_captain'][0]['migration'] = 'division_chairs';
+      $process['field_captain'][0]['source'] = 'chair_id';
       $migration->setProcess($process);
     }
   }

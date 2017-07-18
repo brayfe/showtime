@@ -60,16 +60,12 @@ display:
         options:
           grouping:
             -
-              field: field_division_chair
-              rendered: true
-              rendered_strip: false
-            -
               field: field_captain
-              rendered: true
+              rendered: false
               rendered_strip: false
           columns: 4
           automatic_width: true
-          alignment: horizontal
+          alignment: vertical
           col_class_default: true
           col_class_custom: ''
           row_class_default: true
@@ -446,7 +442,19 @@ display:
           reduce_duplicates: false
           entity_type: user
           plugin_id: user_roles
-      sorts: {  }
+      sorts:
+        field_last_name_value:
+          id: field_last_name_value
+          table: user__field_last_name
+          field: field_last_name_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
       title: 'Sales Reps'
       header: {  }
       footer: {  }

@@ -19,7 +19,7 @@ settings:
   label: ''
   provider: views
   label_display: visible
-  views_label: ''
+  views_label: 'Ticket Counts'
   items_per_page: none
   context_mapping: {  }
 visibility:
