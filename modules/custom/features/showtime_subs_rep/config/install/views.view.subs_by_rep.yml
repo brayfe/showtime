@@ -77,9 +77,7 @@ display:
         options:
           default_field_elements: true
           inline:
-            field_subscriber_first_name: field_subscriber_first_name
-            field_subscriber_last_name: field_subscriber_last_name
-            field_subscriber_email: field_subscriber_email
+            field_division_chair: field_division_chair
           separator: ' '
           hide_empty: false
       fields:
@@ -1007,9 +1005,9 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
-          element_label_type: ''
+          element_label_type: '0'
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -1034,11 +1032,11 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_division_chair_1:
-          id: field_division_chair_1
+        field_division_chair:
+          id: field_division_chair
           table: user__field_division_chair
           field: field_division_chair
-          relationship: field_sales_representative
+          relationship: field_captain
           group_type: group
           admin_label: ''
           label: 'Division Chair'
@@ -1104,6 +1102,9 @@ display:
         sorts: false
         pager: false
         arguments: false
+        relationships: false
+        style: true
+        row: true
       block_description: Leaders
       filters:
         status:
@@ -1173,6 +1174,25 @@ display:
           entity_field: name
           plugin_id: string
       display_description: ''
+      relationships:
+        field_sales_representative:
+          id: field_sales_representative
+          table: node__field_sales_representative
+          field: field_sales_representative
+          relationship: none
+          group_type: group
+          admin_label: 'field_sales_representative: User'
+          required: true
+          plugin_id: standard
+        field_captain:
+          id: field_captain
+          table: user__field_captain
+          field: field_captain
+          relationship: field_sales_representative
+          group_type: group
+          admin_label: 'field_captain: User'
+          required: false
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
