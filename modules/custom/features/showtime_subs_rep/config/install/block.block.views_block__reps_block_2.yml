@@ -16,7 +16,7 @@ provider: null
 plugin: 'views_block:subs_by_rep-block_2'
 settings:
   id: 'views_block:subs_by_rep-block_2'
-  label: ''
+  label: 'Ticket Counts'
   provider: views
   label_display: visible
   views_label: 'Ticket Counts'

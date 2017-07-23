@@ -9,14 +9,14 @@ field_name: field_donation
 entity_type: node
 bundle: subscription
 label: Donation
-description: ''
+description: 'Enter the amount of the donation you would like to give to Showtime! El Paso'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: null
+  min: 0
   max: null
-  prefix: ''
+  prefix: $
   suffix: ''
 field_type: decimal

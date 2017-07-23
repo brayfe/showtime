@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.subscription.field_collected
     - field.field.node.subscription.field_donation
+    - field.field.node.subscription.field_early_bird
     - field.field.node.subscription.field_family_package
     - field.field.node.subscription.field_new_subscriber
     - field.field.node.subscription.field_order_season
@@ -94,6 +95,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_early_bird:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_family_package:
     weight: 7
