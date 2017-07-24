@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.unassigned
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap
+id: exposedformunassignedpage_1
+theme: bootstrap
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:unassigned-page_1'
+settings:
+  id: 'views_exposed_filter_block:unassigned-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/sales-reps/unassigned*'
+    negate: false
+    context_mapping: {  }
