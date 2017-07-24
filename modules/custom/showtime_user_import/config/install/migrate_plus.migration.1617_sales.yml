@@ -49,6 +49,10 @@ source:
       fp_adult: 'Family Plan - Adult'
     16:
       fp_child: 'Family Plan - Child'
+    17:
+      child_ticket: 'Youth Ticket'
+    18:
+      donation: 'Donation'
 
 destination:
   plugin: entity:node
@@ -113,6 +117,7 @@ process:
     map:
       'TRUE': 0
     default_value: 1
+  field_donation: donation
 
 dependencies:
   enforced:

@@ -1,133 +1,135 @@
-ID,Rep,Fname,Lname,Email Address,Phone,Street,City,State,Zip,First Purchase,Offline Purchase,Parking Passes,Season Adults,Family Plan,FP Adult,FP Child,Season Student,Early Birld?
-1,Daphne Wilson,Betty,Alexander,,915-496-7694,10116 Suez Dr,El Paso,TX,79925,TRUE,TRUE,,1,,,,,Y
-2,HDQ HDQ,Maria,Almaraz,Almarazins@aol.com,915-581-5725,7220 Cerro Negro,El Paso,TX,79912-2140,,TRUE,,2,,,,,Y
-3,Shirleen Askenazi,Carole M,Napier,cmnapier@elp.rr.com,915-584-3175,332 Rio Estancia,El Paso,TX,79932,,TRUE,,1,,,,,Y
-4,HDQ HDQ,Maida,Apodaca Aunt,henryna@juno.com,360-348-1950,10521 Saigon Dr,El Paso,TX,79925-5515,TRUE,,,5,,,,,Y
-5,HDQ HDQ,Robert and Ellenore ,Arriaga,ellenorearriaga@yahoo.com,915-328-0906,1512 Vista Real,El Paso,TX,79935,,TRUE,,1,,,,,Y
-6,Lynda Arrufat ,Lynda,Arrufat,,915-373-0041,"P.O, Box 1332",Canutillo,TX,79835,,TRUE,1,1,,,,1,Y
-7,David and Becky Avila,David & Becky,Avila,rebeccaavila34@yahoo.com,915-630-1492,10417 Orpheus,El Paso,TX,79924,TRUE,TRUE,,,1,1,,,Y
-8,David and Becky Avila,Norma,Avila,,915-204-5329,3405 Atlas Ave,El Paso,TX,79904,TRUE,TRUE,,1,,,,,Y
-9,HDQ HDQ,Virginia,Avila,,915-412-7719,8415 Signal Peak Dr,El Paso,TX,79904,,TRUE,,1,,,,,Y
-10,HDQ HDQ,Joe and Essie,Ayoub,essieayoub@sbcglobal.net,,4042 Roadside Ct,El Paso,TX,79922-1912,TRUE,TRUE,,2,,,,,Y
-11,HDQ HDQ,Beverly,Baldwin,bbaldwin@elp.rr.com,915-751-3710,10008 Goliad Dr,El Paso,TX,79924,,TRUE,,1,,,,,Y
-12,HDQ HDQ,Pat,Barrett,tpbarret@gmail.com,915-929-9408,3030 Yarwood ,El Paso,TX,79935,,TRUE,1,4,,,,,Y
-13,HDQ HDQ,Johanna,Beadlle,jbeadle2468@yahoo.com,915-821-1427,10628 Gala Pl,El Paso,TX,79924-1808,,TRUE,,1,,,,,Y
-14,Jimmy and Donna Melver ,Donna,Beamesderfer,donnab741m@gmail.com,717-578-1034,413 Desert Garden Dr,Santa Teresa,NM,88008,TRUE,,1,2,,,,,Y
-15,Daphne Wilson,William,Bear,,915-598-9162,1672 Robert Wynn,El Paso,TX,79936-4717,,TRUE,,1,,,,,Y
-16,HDQ HDQ,Betty,Benton,blsbenton@aol.com,915-592-2953,1804 Tommy Aaron Dr,El Paso,TX,79936,,TRUE,,1,,,,,Y
-17,HDQ HDQ,Donna,Bloedorn,whyelpaso@aol.com,915-276-3866,2744 Gunnison,El Paso,TX,79904,TRUE,,,,,,,,Y
-18,HDQ HDQ,Donna,Bloedorn,whyelpaso@aol.com,915-276-3866,2744 Gunnison,El Paso,TX,79904,TRUE,,1,2,,,,,Y
-19,Kendra and Mark-Thomas Bray ,Nichol,Brandon,nikki-kc@hotmail.com,503-757-5412,14037 Peter Noyes Dr,Horizon City,TX,79928,TRUE,,,2,,,,,Y
-20,Sue Sanchez,Elizabeth,Branham,,,10725 Lomas Dr,El Paso,TX,79935,,TRUE,,1,,,,,Y
-21,Kendra and Mark-Thomas Bray ,Kendra and Mark-Thomas,Bray,kbray@elp.rr.com,915-751-8902,9003 Virgo Ln,El Paso,TX,79904-1000,,TRUE,1,2,,,,,Y
-22,Lucille Brink,Lucille,Brink,lhbrink801@sbcglobal.net,915-581-1325,801 Live Oak Dr,El Paso,TX,79932,,TRUE,1,1,,,,,Y
-23,HDQ HDQ,Martha,Broaddus,,915-584-7018,6747 Fiesta ,El Paso,TX,79912,,TRUE,,1,,,,,Y
-24,HDQ HDQ,Patricia,Bryant,,,5828 Sturgeon Dr,El Paso,TX,79924-5918,,TRUE,,1,,,,,Y
-25,HDQ HDQ,Consuelo,Calvillo,,,265 Fluorite Dr,El Paso,TX,79932-1613,,TRUE,1,1,,,,,Y
-26,David and Becky Avila,Joanne,Campbell,,,816 Gondola Ln,El Paso,TX,79912,,TRUE,1,2,,,,,Y
-27,HDQ HDQ,William E,Carter,,915-584-5184,435 Crown Point Dr,El Paso,TX,79912,,TRUE,,2,,,,,Y
-28,HDQ HDQ,Yvonne T,Cerroni,,915-855-3383,2040 Greemlee Dr,El Paso,TX,79936,,TRUE,,2,,,,,Y
-29,Jimmy and Donna Melver ,Arlene,Charron,,915-217-3748,9624 Wahoo Ln,El Paso,TX,79924,,TRUE,,1,,,,,Y
-30,HDQ HDQ,Judith,Colletti,jcolletti86@outlook.com,,5041 Alabama  #32,El Paso,TX,79930,TRUE,,,1,,,,,Y
-31,Ethel Corbin,Ethel,Corbin,r.l.corbin@att.net,915-532-2028,704 McKelligon Dr,El Paso,TX,79902-2006,,TRUE,1,3,,,,,Y
-32,HDQ HDQ,Mary,Coro,coromd@peoplepc.com,915-526-3089,6212 Pino Real Dr,El Paso,TX,79912-2512,,TRUE,,2,,,,,Y
-33,HDQ HDQ,Gloria L,Cotton,,915-755-5381,5901 Flounder,El Paso,TX,79924,,TRUE,1,2,,,,,Y
-34,Dale Meriwether,Iris,Culp,,915-598-2315,8904 Shaver Dr,El Paso,TX,79925,,TRUE,1,1,,,,,Y
-35,HDQ HDQ,Nina,Cunningham,,915-929-7433,317 De Leon Dr,El Paso,TX,79912,,TRUE,1,1,,,,,Y
-36,Harriet Damon,Harriet,Damon,hdamon@sbcglobal.net,915-591-4448,3316 Tyrone Rd,El Paso,TX,79925,,TRUE,1,1,,,,,Y
-37,Ethel Corbin,Genevieve R,Davis,,,9646 Blue Wing Dr,El Paso,TX,79924-5907,,TRUE,,,1,2,2,,Y
-38,HDQ HDQ,Don,Delavne,dondelavne@yohoo.com,915-855-3225,11416 Jones Grant,El Paso,TX,79936,,TRUE,,1,,,,,Y
-39,HDQ HDQ,Carlo,DeShouten,voodoo_rs719@sbcglobal.net,915-757-6651,4517 RJ Lunn CT,El Paso,TX,79924,,TRUE,1,4,,,,,Y
-40,William Dominik,Bill,Dominik,,915-877-3319,831 Anthony,Canutillo,TX,79835,,TRUE,,1,,,,,Y
-41,HDQ HDQ,Elaine A,Donohue,,,1815 E Robinson Ave,El Paso,TX,79902-2219,,TRUE,,1,,,,,Y
-42,Daphne Wilson,Bubbles,Eades,,915-598-6376,10131 Stoneway Dr,El Paso,TX,79925,,TRUE,1,1,,,,,Y
-43,HDQ HDQ,Susi,Edwards,swisssusi@yahoo.com,915-584-8743,806 Cortijo Dr,El Paso,TX,79912,,TRUE,,1,,,,,Y
-44,HDQ HDQ,Susan,Elias Assi,norainassi@aol.com,915-545-4443,4009 Santa Ana,El Paso,TX,79902,TRUE,,,1,,,,,Y
-45,Verena Williamson,Elisabeth and George,Ellis,,915-433-5788,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,2,,,,,Y
-46,HDQ HDQ,Leticia,Espinoza,,919-997-5644,P.O. Box 17444,El Paso,TX,79917,,TRUE,,1,,,,,Y
-47,HDQ HDQ,Jane,Fisher,,915-778-4349,7245 Nimitz Pl,El Paso,TX,79915,,TRUE,1,2,,,,,Y
-48,HDQ HDQ,Fran,Fleisher,,915-203-8178,300 Skyview St Apt H-4,El Paso,TX,79912-3134,,TRUE,1,2,,,,,Y
-49,Lucille Brink,Patricia,Foley,,915-584-9617,5216 White Oak Dr,El Paso,TX,79932,,TRUE,,1,,,,,Y
-50,Lynda Arrufat ,Anita,Gacharna,agacharna@yahoo.com,915-630-3054,629 Bristol,El Paso,TX,79912,,,1,2,,,,,Y
-51,HDQ HDQ,Raul A,Garibay,theattache@aol.com,915-755-4038,3405 Volcanic Ave,El Paso,TX,79904,,TRUE,1,4,,,,,Y
-52,William Dominik,William,Graham,knightofrain@mail.com,915-333-0190,2118 Wedgewood Dr #133,El Paso,TX,79925,,TRUE,,1,,,,,Y
-53,HDQ HDQ,Raymond,Graham,,915-491-7020,10142 Stoneway Dr,El Paso,TX,79925-6930,,TRUE,,,1,2,4,,Y
-54,HDQ HDQ,Edward,Greer,jewellfeb@gmail.com,915-755-2244,3134 Mesa Verde Ln,El Paso,TX,79904,,TRUE,1,2,,,,,Y
-55,HDQ HDQ,Margarita,Guerrero,,915-821-7429,10416 Orpheus Dr,El Paso,TX,79924,,TRUE,1,,1,,,,Y
-56,HDQ HDQ,Vivian Ernestine,Harlan,veharlan@aol.com,915-591-0375,9037 Cosmos,El Paso,TX,79925,,TRUE,,,,,,,Y
-57,HDQ HDQ,Lloyd,Harris,,915-544-7889,1525 Camino Alto,El Paso,TX,79902,,TRUE,,2,,,,,Y
-58,Verena Williamson,Pat,Haskin,,915-581-6282,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,1,,,,,Y
-59,HDQ HDQ,Linda,Hazelton,lhaze5@yahoo.com,575-824-4249,460 Hermosa Dr,Chaparral,NM,88081,,TRUE,,1,,,,,Y
-60,David and Becky Avila,Robert and Karen,Herrera,kd.herrera@live.com,915-479-8007,4141 Loma Rosada Dr,El Paso,TX,79934-3770,,TRUE,,2,,,,,Y
-61,HDQ HDQ,Maxine,Hixon,maxhix0407@aol.com,915-549-0632,10053 Alcan St,El Paso,TX,79924,,TRUE,,1,,,,,Y
-62,HDQ HDQ,Mamie F,Holloway,mamie.f@sbcglobal.net,915-592-5263,3112 Amarillo St,El Paso,TX,79936-2202,,TRUE,,2,,,,,Y
-63,HDQ HDQ,Linda,Holman,ljth2001@hotmail.com,915-740-3129,7367 Wind Song Drive,El Paso,TX,79912,,,1,2,,,,,Y
-64,HDQ HDQ,Helen,Holmes,,,5704 Sage Ct,El Paso,TX,79924-2636,,TRUE,,1,,,,,Y
-65,Jimmy and Donna Melver ,Charles,Horak,horakbarb@aol.com,915-591-2501,8900 Mettler Drive,El Paso,TX,79925,TRUE,,,4,,,,,Y
-66,HDQ HDQ,Tony,Jabor,azmdj17txgal@sbcglobal.net,915-755-7358,9001 Galena Dr,El Paso,TX,79904-1012,,TRUE,,2,,,,,Y
-67,Edna Navarro,Elena,Jarquin,churritos@aol.com,915-845-5788,429 Stonebluff Rd,El Paso,TX,79912-3310,,TRUE,,2,,,,,Y
-68,HDQ HDQ,Mary,Johnston,,,1849 Pete Brown Dr,El Paso,TX,79936,TRUE,,,2,,,,,Y
-69,HDQ HDQ,Douglas,Johnston,dajdj@hotmail.com,915-591-6932,10608 Brian Mooney Ave,El Paso,TX,79935-2813,,TRUE,,2,,,,,Y
-70,HDQ HDQ,Barbara,Keily,bekay1@sbcglobal.net,915-755-4434,2905 Devils Tower,El Paso,TX,79904,,TRUE,,1,,,,,Y
-71,HDQ HDQ,Wanda,Keown,allkeo@aol.com,915-598-9595,3312 Wedgewood Dr,El Paso,TX,79925-2806,,TRUE,1,1,,,,,Y
-72,Kendra and Mark-Thomas Bray ,Patricia,Lally,pllall722@aol.com,915-474-2125,4529 Loma Grande Dr,El Paso,TX,79934,TRUE,,1,5,,,,,Y
-73,HDQ HDQ,Georgia,Lane,gclane@aol.com,575-522-7463,4572 Paseo Azul,Las Cruces,NM,88011,TRUE,,1,2,,,,,Y
-74,HDQ HDQ,Steven,Lane,gclane@aol.com,575-522-7463,4572 Paseo Azul,Las Cruces,NM,88011,TRUE,,,1,,,,,Y
-75,HDQ HDQ,Sandra,Lavender,,915-584-2870,7221 San Marino Dr,El Paso,TX,79912,,TRUE,1,1,,,,,Y
-76,HDQ HDQ,John,Leonhardt,,915-581-3554,5761 Kingsfield Ave,El Paso,TX,79912-4834,,TRUE,1,3,,,,,Y
-77,HDQ HDQ,Doug,Littlejohn,,915-590-5425,10604 Park View,El Paso,TX,79935,,TRUE,,1,,,,,Y
-78,Dorothy D Lockett,Dorothy D,Lockett,,915-551-7461,10044 Manitoba St,El Paso,TX,79924,,TRUE,,1,,,,,Y
-79,HDQ HDQ,Brenda L,McBride,,915-565-3357,3421 Sunnyside Ave,El Paso,TX,79904-4543,,TRUE,1,2,,,,,Y
-80,HDQ HDQ,Joan M,McLaughlin,,915-566-4976,4610 Frankfort Ave,El Paso,TX,79903,,TRUE,1,2,,,,,Y
-81,HDQ HDQ,Charlotte,McMicken,c_mcmicken@yahoo.com,915-590-3237,3920 Breckenridge Dr,El Paso,TX,79936,TRUE,,,1,,,,,Y
-82,Jimmy and Donna Melver ,Jimmy,Melver,jkmelver@yahoo.com,915-751-8718,4719 Academy,El Paso,TX,79924,,TRUE,,2,,,,,Y
-83,HDQ HDQ,William,Meredith,meredith@elp.rr.com,915-566-5006,3115 Federal,El Paso,TX,79930,,TRUE,1,2,,,,,Y
-84,Dale Meriwether,Dale,Meriwether,dalevm@sbcglobal.net,915-592-5362,1926 Trawood Dr #36,El Paso,TX,79935,,TRUE,,1,,,,,Y
-85,Verena Williamson,Mabeth,Moreland,,915-532-8868,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,1,,,,,Y
-86,HDQ HDQ,Paula,Moss,pjmoss17@yahoo.com,214-793-6080,3106 Douglas,El Paso,TX,79903,TRUE,,,1,,,,,Y
-87,HDQ HDQ,Donna G,Munch,,,6144 Los Robles Dr,El Paso,TX,79912,,TRUE,1,,,,,,Y
-88,HDQ HDQ,Dolores,Murphy,,915-449-7462,5629 Arrowhead,El Paso,TX,79924,,TRUE,1,,1,2,2,,Y
-89,HDQ HDQ,Richard and Patricia,Murtland,,,7304 Good Samariton Ct Apt 216,El Paso,TX,79912,,TRUE,,2,,,,,Y
-90,Harriet Damon,Deloris J,Navrkal,,915-755-2510,10125 Dellwood Dr,El Paso,TX,79924,,TRUE,1,1,,,,,Y
-91,HDQ HDQ,Beth,Newman,abltnaservices@gmail.com,915-422-5542,9852 Goby,El Paso,TX,79924,,TRUE,,1,,,,,Y
-92,HDQ HDQ,Ron,Palmasky,,,,El Paso,TX,,,TRUE,,,1,2,4,,Y
-93,Carmen Paredes,Carmen,Paredes,mparedes2@att.net,915-565-8335,3210 Taylor Ave,El Paso,TX,79930,,TRUE,,1,,,,,Y
-94,Sue Parham,Gregory,Parham,ms.parham@sbcglobal.net,915-584-7092,6 Cielo Dorado,Anthony,NM,88021,,TRUE,,3,,,,,Y
-95,Verena Williamson,Rose Y,Pergricht,,915-584-3523,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,1,,,,,Y
-96,HDQ HDQ,Colette,Perry,colettpetty@sbcglobal.net,915-775-0089,8412 Catalpa Ln,El Paso,TX,79925,,TRUE,,1,,,,,Y
-97,HDQ HDQ,Sally,Ponzio,sponzio@aol.com,915-859-1792,230 Harvard Ave,El Paso,TX,79907,,TRUE,1,2,,,,,Y
-98,HDQ HDQ,Leonor,Posner,jdiazday@yahoo.com,915-584-1620,309 Quincy Ave,El Paso,TX,79922-1228,TRUE,,,2,,,,,Y
-99,David and Becky Avila,Don,Powell,donleepowell@aol.com,915-821-7170,4933 Grapeland,El Paso,TX,79924,,TRUE,,2,,,,,Y
-100,Maria Almaraz,Kay,Radon,,915-584-7840,1220 Belvidere,El Paso,TX,79912,,TRUE,,1,,,,,Y
-101,HDQ HDQ,Kathleen,Ramos,kathyktchr@aol.com,915-877-5015,1056 Miss Bev Ave,El Paso,TX,79932,TRUE,,1,,1,2,3,,Y
-102,HDQ HDQ,Linda,Reece,lrr76@hotmail.com,915-590-4222,3005 Yarwood Dr,El Paso,TX,79935,,TRUE,,2,,,,,Y
-103,HDQ HDQ,Marian,Riley,,,8313 Hopewell Dr,El Paso,TX,79925-2601,,TRUE,,1,,,,,Y
-104,HDQ HDQ,Thomas,Rood,tomrood@sbcglobal.net,915-603-7261,236 Viking Dr,El Paso,TX,79912,,TRUE,,1,,,,,Y
-105,HDQ HDQ,Brenda,Rutledge,brendarutledge@sbcglobal.net,915-592-6773,11216 Dick Lotz,El Paso,TX,79936,,,,1,,,,,Y
-106,Sue Sanchez,Sue,Sanchez,sanchez_sue@hotmail.com,915-590-3512,1353 Backus St,El Paso,TX,79925,,TRUE,1,3,,,,,Y
-107,HDQ HDQ,Michael,Sanders,michael_1957@msn.com,915-474-2728,713 Rosinante Road,El Paso,TX,79922,TRUE,,,2,,,,,Y
-108,Maria Almaraz,John,Schmid,jaschmid2@sbcglobal.net,915-588-3202,5704 Burning Tree Dr,El Paso,TX,79912-4106,,TRUE,,2,,,,,Y
-109,HDQ HDQ,Dan and Kathleen,Schulte,schultedks@sbcglobal.net,915-755-3387,3130 Mesa Verde Ln,El Paso,TX,79904,,TRUE,1,2,,,,,Y
-110,HDQ HDQ,Jane and Ken,Schwenke,,915-584-4551,704 Waltham Ct,El Paso,TX,79922,,TRUE,1,2,,,,,Y
-111,Ray and Carmen Olivas-Graham,Joe Bob,Shook,jshook@elp.rr.com,915-433-6253,19019 Barrington Rd,Horizon City,TX,79928,,TRUE,,2,,,,,Y
-112,Maria Almaraz,Barbara,Silva,,,7216 Cerro Negro Dr,El Paso,TX,79912,,TRUE,,1,,,,,Y
-113,Nina Siros,Nina,Siros,ninasiros@yahoo.com,915-309-3269,1208 Devonshire,El Paso,TX,79925,,TRUE,,1,,,,,Y
-114,HDQ HDQ,Lamar,Skarda,lamarskarda@gmail.com,,857 Lakeway Dr,El Paso,TX,79932,,TRUE,,2,,,,,Y
-115,HDQ HDQ,Pat,Smith,gosolarenergy2@yahoo.com,915-544-8417,709 Mississippi Dr,El Paso,TX,,,TRUE,,5,,,,,Y
-116,Verena Williamson,Rodney and Jeanene,Smith,,915-585-0110,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,2,,,,,Y
-117,Jimmy and Donna Melver ,Charles,Stapler,csrs5601@sbcglobal.net,915-833-1406,8672 Pilgrimage Cir,El Paso,TX,79912-1363,TRUE,,,3,,,,,Y
-118,HDQ HDQ,Armida,Stevens,,915-584-8540,1216 Cerrito Bello,El Paso,TX,79912,,TRUE,,1,,,,,Y
-119,Jimmy and Donna Melver ,Mark,Swendiman,mswendiman@elp.rr.com,915-491-8478,3212 Malapai Ln,El Paso,TX,79904,,TRUE,1,,1,2,3,,Y
-120,HDQ HDQ,Donald,Tomko,dltomko301@att.net,915-549-6128,4918 Maxwell Ave,El Paso,TX,79904-1428,TRUE,,1,2,,,,,Y
-121,Verena Williamson,Minnie,Travis,,915-539-3419,P.O. Box 1821,Santa Teresa,NM,88008,TRUE,TRUE,,1,,,,,Y
-122,HDQ HDQ,Donnetta,Vollmer,dlvollme@aol.com,915-751-3441,10040 Foothills Dr,El Paso,TX,79924,,TRUE,,1,,,,,Y
-123,HDQ HDQ,Corinne,Vonberg,,915-598-8993,1820 Tom Bolt Dr,El Paso,TX,79936,,TRUE,,2,,,,,Y
-124,HDQ HDQ,Rachel,Weinstein,mikenrachel@elp.rr.com,915-581-0836,6976 Granero Dr,El Paso,TX,79915,,TRUE,,1,,,,,Y
-125,HDQ HDQ,Carole,Wheeler,,915-821-7908,10332 Shoshone,El Paso,TX,79924,,TRUE,,1,,,,,Y
-126,Jimmy and Donna Melver ,William,Wickline,billyums@earthlink.net,915-755-3030,10021 Goliad Dr,El Paso,TX,79924,,TRUE,1,1,,,,,Y
-127,HDQ HDQ,David,Williams,ldavidwilliamsept@gmail.com,915-591-0844,9513 Desert Ridge Dr,El Paso,TX,79925,,TRUE,1,2,,,,,Y
-128,Verena Williamson,Jim and Verena,Williamson,,915-549-5475,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,2,,,,,Y
-129,Daphne Wilson,Daphne,Wilson,dadiwill@juno.com,915-585-1982,6317 El Risco,El Paso,TX,79912-2507,,TRUE,,1,,,,,Y
-130,Maria Almaraz,Dieter,Winterhalter,,,6277 Wilderwood Ct,El Paso,TX,79912-3212,,TRUE,,1,,,,,Y
-131,Myrna and Joe Zanetell,Myrna,Zanetell,,915-833-5108,812 Live Oak Dr,El Paso,TX,79932,,TRUE,,1,,,,,Y
-132,HDQ HDQ,Rosaline,Zimmerly,,915-875-2738,410 Rose Lane,El Paso,TX,79915,,TRUE,,2,,,,,Y
+ID,Rep,Fname,Lname,Email Address,Phone,Street,City,State,Zip,First Purchase,Offline Purchase,Parking Passes,Season Adults,Family Plan,FP Adult,FP Child,Season Student,Early Bird,Donation
+1,Daphne Wilson,Betty,Alexander,,915-496-7694,10116 Suez Dr,El Paso,TX,79925,TRUE,TRUE,,1,,,,,Y,75
+2,HDQ HDQ,Maria,Almaraz,Almarazins@aol.com,915-581-5725,7220 Cerro Negro,El Paso,TX,79912-2140,,TRUE,,2,,,,,Y,300
+3,Shirleen Askenazi,Carole M,Napier,cmnapier@elp.rr.com,915-584-3175,332 Rio Estancia,El Paso,TX,79932,,TRUE,,1,,,,,Y,75
+4,HDQ HDQ,Maida,Apodaca Aunt,henryna@juno.com,360-348-1950,10521 Saigon Dr,El Paso,TX,79925-5515,TRUE,,,5,,,,,Y,375
+5,HDQ HDQ,Robert and Ellenore ,Arriaga,ellenorearriaga@yahoo.com,915-328-0906,1512 Vista Real,El Paso,TX,79935,,TRUE,,1,,,,,Y,75
+6,Lynda Arrufat ,Lynda,Arrufat,,915-373-0041,"P.O, Box 1332",Canutillo,TX,79835,,TRUE,1,1,,,,1,Y,163
+7,David and Becky Avila,David & Becky,Avila,rebeccaavila34@yahoo.com,915-630-1492,10417 Orpheus,El Paso,TX,79924,TRUE,TRUE,,,1,1,,,Y,300
+8,David and Becky Avila,Norma,Avila,,915-204-5329,3405 Atlas Ave,El Paso,TX,79904,TRUE,TRUE,,1,,,,,Y,75
+9,HDQ HDQ,Virginia,Avila,,915-412-7719,8415 Signal Peak Dr,El Paso,TX,79904,,TRUE,,1,,,,,Y,75
+10,HDQ HDQ,Joe and Essie,Ayoub,essieayoub@sbcglobal.net,,4042 Roadside Ct,El Paso,TX,79922-1912,TRUE,TRUE,,2,,,,,Y,150
+11,HDQ HDQ,Beverly,Baldwin,bbaldwin@elp.rr.com,915-751-3710,10008 Goliad Dr,El Paso,TX,79924,,TRUE,,1,,,,,Y,100
+12,HDQ HDQ,Pat,Barrett,tpbarret@gmail.com,915-929-9408,3030 Yarwood ,El Paso,TX,79935,,TRUE,1,4,,,,,Y,528
+13,HDQ HDQ,Johanna,Beadlle,jbeadle2468@yahoo.com,915-821-1427,10628 Gala Pl,El Paso,TX,79924-1808,,TRUE,,1,,,,,Y,100
+14,Jimmy and Donna Melver ,Donna,Beamesderfer,donnab741m@gmail.com,717-578-1034,413 Desert Garden Dr,Santa Teresa,NM,88008,TRUE,,1,2,,,,,Y,178
+15,Daphne Wilson,William,Bear,,915-598-9162,1672 Robert Wynn,El Paso,TX,79936-4717,,TRUE,,1,,,,,Y,75
+16,HDQ HDQ,Betty,Benton,blsbenton@aol.com,915-592-2953,1804 Tommy Aaron Dr,El Paso,TX,79936,,TRUE,,1,,,,,Y,75
+17,HDQ HDQ,Donna,Bloedorn,whyelpaso@aol.com,915-276-3866,2744 Gunnison,El Paso,TX,79904,TRUE,,,,,,,,Y,100
+18,HDQ HDQ,Donna,Bloedorn,whyelpaso@aol.com,915-276-3866,2744 Gunnison,El Paso,TX,79904,TRUE,,1,2,,,,,Y,178
+19,Kendra and Mark-Thomas Bray ,Nichol,Brandon,nikki-kc@hotmail.com,503-757-5412,14037 Peter Noyes Dr,Horizon City,TX,79928,TRUE,,,2,,,,,Y,150
+20,Sue Sanchez,Elizabeth,Branham,,,10725 Lomas Dr,El Paso,TX,79935,,TRUE,,1,,,,,Y,75
+21,Kendra and Mark-Thomas Bray ,Kendra and Mark-Thomas,Bray,kbray@elp.rr.com,915-751-8902,9003 Virgo Ln,El Paso,TX,79904-1000,,TRUE,1,2,,,,,Y,178
+22,Lucille Brink,Lucille,Brink,lhbrink801@sbcglobal.net,915-581-1325,801 Live Oak Dr,El Paso,TX,79932,,TRUE,1,1,,,,,Y,103
+23,HDQ HDQ,Martha,Broaddus,,915-584-7018,6747 Fiesta ,El Paso,TX,79912,,TRUE,,1,,,,,Y,75
+24,HDQ HDQ,Patricia,Bryant,,,5828 Sturgeon Dr,El Paso,TX,79924-5918,,TRUE,,1,,,,,Y,75
+25,HDQ HDQ,Consuelo,Calvillo,,,265 Fluorite Dr,El Paso,TX,79932-1613,,TRUE,1,1,,,,,Y,103
+26,David and Becky Avila,Joanne,Campbell,,,816 Gondola Ln,El Paso,TX,79912,,TRUE,1,2,,,,,Y,178
+27,HDQ HDQ,William E,Carter,,915-584-5184,435 Crown Point Dr,El Paso,TX,79912,,TRUE,,2,,,,,Y,150
+28,HDQ HDQ,Yvonne T,Cerroni,,915-855-3383,2040 Greemlee Dr,El Paso,TX,79936,,TRUE,,2,,,,,Y,150
+29,Jimmy and Donna Melver ,Arlene,Charron,,915-217-3748,9624 Wahoo Ln,El Paso,TX,79924,,TRUE,,1,,,,,Y,75
+30,HDQ HDQ,Judith,Colletti,jcolletti86@outlook.com,,5041 Alabama  #32,El Paso,TX,79930,TRUE,,,1,,,,,Y,75
+31,Ethel Corbin,Ethel,Corbin,r.l.corbin@att.net,915-532-2028,704 McKelligon Dr,El Paso,TX,79902-2006,,TRUE,1,3,,,,,Y,378
+32,HDQ HDQ,Mary,Coro,coromd@peoplepc.com,915-526-3089,6212 Pino Real Dr,El Paso,TX,79912-2512,,TRUE,,2,,,,,Y,150
+33,HDQ HDQ,Gloria L,Cotton,,915-755-5381,5901 Flounder,El Paso,TX,79924,,TRUE,1,2,,,,,Y,178
+34,Dale Meriwether,Iris,Culp,,915-598-2315,8904 Shaver Dr,El Paso,TX,79925,,TRUE,1,1,,,,,Y,103
+35,HDQ HDQ,Nina,Cunningham,,915-929-7433,317 De Leon Dr,El Paso,TX,79912,,TRUE,1,1,,,,,Y,103
+36,Harriet Damon,Harriet,Damon,hdamon@sbcglobal.net,915-591-4448,3316 Tyrone Rd,El Paso,TX,79925,,TRUE,1,1,,,,,Y,203
+37,Ethel Corbin,Genevieve R,Davis,,,9646 Blue Wing Dr,El Paso,TX,79924-5907,,TRUE,,,1,2,2,,Y,175
+38,HDQ HDQ,Don,Delavne,dondelavne@yohoo.com,915-855-3225,11416 Jones Grant,El Paso,TX,79936,,TRUE,,1,,,,,Y,75
+39,HDQ HDQ,Carlo,DeShouten,voodoo_rs719@sbcglobal.net,915-757-6651,4517 RJ Lunn CT,El Paso,TX,79924,,TRUE,1,4,,,,,Y,328
+40,William Dominik,Bill,Dominik,,915-877-3319,831 Anthony,Canutillo,TX,79835,,TRUE,,1,,,,,Y,75
+41,HDQ HDQ,Elaine A,Donohue,,,1815 E Robinson Ave,El Paso,TX,79902-2219,,TRUE,,1,,,,,Y,75
+42,Daphne Wilson,Bubbles,Eades,,915-598-6376,10131 Stoneway Dr,El Paso,TX,79925,,TRUE,1,1,,,,,Y,203
+43,HDQ HDQ,Susi,Edwards,swisssusi@yahoo.com,915-584-8743,806 Cortijo Dr,El Paso,TX,79912,,TRUE,,1,,,,,Y,75
+44,HDQ HDQ,Susan,Elias Assi,norainassi@aol.com,915-545-4443,4009 Santa Ana,El Paso,TX,79902,TRUE,,,1,,,,,Y,75
+45,Verena Williamson,Elisabeth and George,Ellis,,915-433-5788,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,2,,,,,Y,150
+46,HDQ HDQ,Leticia,Espinoza,,919-997-5644,P.O. Box 17444,El Paso,TX,79917,,TRUE,,1,,,,,Y,75
+47,HDQ HDQ,Jane,Fisher,,915-778-4349,7245 Nimitz Pl,El Paso,TX,79915,,TRUE,1,2,,,,,Y,178
+48,HDQ HDQ,Fran,Fleisher,,915-203-8178,300 Skyview St Apt H-4,El Paso,TX,79912-3134,,TRUE,1,2,,,,,Y,178
+49,Lucille Brink,Patricia,Foley,,915-584-9617,5216 White Oak Dr,El Paso,TX,79932,,TRUE,,1,,,,,Y,75
+50,Lynda Arrufat ,Anita,Gacharna,agacharna@yahoo.com,915-630-3054,629 Bristol,El Paso,TX,79912,,,1,2,,,,,Y,178
+51,HDQ HDQ,Raul A,Garibay,theattache@aol.com,915-755-4038,3405 Volcanic Ave,El Paso,TX,79904,,TRUE,1,4,,,,,Y,328
+52,William Dominik,William,Graham,knightofrain@mail.com,915-333-0190,2118 Wedgewood Dr #133,El Paso,TX,79925,,TRUE,,1,,,,,Y,100
+53,HDQ HDQ,Raymond,Graham,,915-491-7020,10142 Stoneway Dr,El Paso,TX,79925-6930,,TRUE,,,1,2,4,,Y,275
+54,HDQ HDQ,Edward,Greer,jewellfeb@gmail.com,915-755-2244,3134 Mesa Verde Ln,El Paso,TX,79904,,TRUE,1,2,,,,,Y,278
+55,HDQ HDQ,Margarita,Guerrero,,915-821-7429,10416 Orpheus Dr,El Paso,TX,79924,,TRUE,1,,1,,,,Y,210
+56,HDQ HDQ,Vivian Ernestine,Harlan,veharlan@aol.com,915-591-0375,9037 Cosmos,El Paso,TX,79925,,TRUE,,,,,,,Y,30
+57,HDQ HDQ,Lloyd,Harris,,915-544-7889,1525 Camino Alto,El Paso,TX,79902,,TRUE,,2,,,,,Y,180
+58,Verena Williamson,Pat,Haskin,,915-581-6282,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,1,,,,,Y,75
+59,HDQ HDQ,Linda,Hazelton,lhaze5@yahoo.com,575-824-4249,460 Hermosa Dr,Chaparral,NM,88081,,TRUE,,1,,,,,Y,75
+60,David and Becky Avila,Robert and Karen,Herrera,kd.herrera@live.com,915-479-8007,4141 Loma Rosada Dr,El Paso,TX,79934-3770,,TRUE,,2,,,,,Y,150
+61,HDQ HDQ,Maxine,Hixon,maxhix0407@aol.com,915-549-0632,10053 Alcan St,El Paso,TX,79924,,TRUE,,1,,,,,Y,75
+62,HDQ HDQ,Mamie F,Holloway,mamie.f@sbcglobal.net,915-592-5263,3112 Amarillo St,El Paso,TX,79936-2202,,TRUE,,2,,,,,Y,150
+63,HDQ HDQ,Linda,Holman,ljth2001@hotmail.com,915-740-3129,7367 Wind Song Drive,El Paso,TX,79912,,,1,2,,,,,Y,180
+64,HDQ HDQ,Helen,Holmes,,,5704 Sage Ct,El Paso,TX,79924-2636,,TRUE,,1,,,,,Y,75
+65,Jimmy and Donna Melver ,Charles,Horak,horakbarb@aol.com,915-591-2501,8900 Mettler Drive,El Paso,TX,79925,TRUE,,,4,,,,,Y,300
+66,HDQ HDQ,Tony,Jabor,azmdj17txgal@sbcglobal.net,915-755-7358,9001 Galena Dr,El Paso,TX,79904-1012,,TRUE,,2,,,,,Y,150
+67,Edna Navarro,Elena,Jarquin,churritos@aol.com,915-845-5788,429 Stonebluff Rd,El Paso,TX,79912-3310,,TRUE,,2,,,,,Y,150
+68,HDQ HDQ,Mary,Johnston,,,1849 Pete Brown Dr,El Paso,TX,79936,TRUE,,,2,,,,,Y,150
+69,HDQ HDQ,Douglas,Johnston,dajdj@hotmail.com,915-591-6932,10608 Brian Mooney Ave,El Paso,TX,79935-2813,,TRUE,,2,,,,,Y,150
+70,HDQ HDQ,Barbara,Keily,bekay1@sbcglobal.net,915-755-4434,2905 Devils Tower,El Paso,TX,79904,,TRUE,,1,,,,,Y,75
+71,HDQ HDQ,Wanda,Keown,allkeo@aol.com,915-598-9595,3312 Wedgewood Dr,El Paso,TX,79925-2806,,TRUE,1,1,,,,,Y,103
+72,Kendra and Mark-Thomas Bray ,Patricia,Lally,pllall722@aol.com,915-474-2125,4529 Loma Grande Dr,El Paso,TX,79934,TRUE,,1,5,,,,,Y,403
+73,HDQ HDQ,Georgia,Lane,gclane@aol.com,575-522-7463,4572 Paseo Azul,Las Cruces,NM,88011,TRUE,,1,2,,,,,Y,178
+74,HDQ HDQ,Steven,Lane,gclane@aol.com,575-522-7463,4572 Paseo Azul,Las Cruces,NM,88011,TRUE,,,1,,,,,Y,95
+75,HDQ HDQ,Sandra,Lavender,,915-584-2870,7221 San Marino Dr,El Paso,TX,79912,,TRUE,1,1,,,,,Y,103
+76,HDQ HDQ,John,Leonhardt,,915-581-3554,5761 Kingsfield Ave,El Paso,TX,79912-4834,,TRUE,1,3,,,,,Y,278
+77,HDQ HDQ,Doug,Littlejohn,,915-590-5425,10604 Park View,El Paso,TX,79935,,TRUE,,1,,,,,Y,125
+78,Dorothy D Lockett,Dorothy D,Lockett,,915-551-7461,10044 Manitoba St,El Paso,TX,79924,,TRUE,,1,,,,,Y,75
+79,HDQ HDQ,Brenda L,McBride,,915-565-3357,3421 Sunnyside Ave,El Paso,TX,79904-4543,,TRUE,1,2,,,,,Y,228
+80,HDQ HDQ,Joan M,McLaughlin,,915-566-4976,4610 Frankfort Ave,El Paso,TX,79903,,TRUE,1,2,,,,,Y,178
+81,HDQ HDQ,Charlotte,McMicken,c_mcmicken@yahoo.com,915-590-3237,3920 Breckenridge Dr,El Paso,TX,79936,TRUE,,,1,,,,,Y,75
+82,Jimmy and Donna Melver ,Jimmy,Melver,jkmelver@yahoo.com,915-751-8718,4719 Academy,El Paso,TX,79924,,TRUE,,2,,,,,Y,150
+83,HDQ HDQ,William,Meredith,meredith@elp.rr.com,915-566-5006,3115 Federal,El Paso,TX,79930,,TRUE,1,2,,,,,Y,178
+84,Dale Meriwether,Dale,Meriwether,dalevm@sbcglobal.net,915-592-5362,1926 Trawood Dr #36,El Paso,TX,79935,,TRUE,,1,,,,,Y,175
+85,Verena Williamson,Mabeth,Moreland,,915-532-8868,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,1,,,,,Y,175
+86,HDQ HDQ,Paula,Moss,pjmoss17@yahoo.com,214-793-6080,3106 Douglas,El Paso,TX,79903,TRUE,,,1,,,,,Y,75
+87,HDQ HDQ,Donna G,Munch,,,6144 Los Robles Dr,El Paso,TX,79912,,TRUE,1,,,,,,Y,75
+88,HDQ HDQ,Dolores,Murphy,,915-449-7462,5629 Arrowhead,El Paso,TX,79924,,TRUE,1,,1,2,2,,Y,203
+89,HDQ HDQ,Richard and Patricia,Murtland,,,7304 Good Samariton Ct Apt 216,El Paso,TX,79912,,TRUE,,2,,,,,Y,250
+90,Harriet Damon,Deloris J,Navrkal,,915-755-2510,10125 Dellwood Dr,El Paso,TX,79924,,TRUE,1,1,,,,,Y,103
+91,HDQ HDQ,Beth,Newman,abltnaservices@gmail.com,915-422-5542,9852 Goby,El Paso,TX,79924,,TRUE,,1,,,,,Y,75
+92,HDQ HDQ,Ron,Palmasky,,,,El Paso,TX,,,TRUE,,,1,2,4,,Y,300
+93,Carmen Paredes,Carmen,Paredes,mparedes2@att.net,915-565-8335,3210 Taylor Ave,El Paso,TX,79930,,TRUE,,1,,,,,Y,75
+94,Sue Parham,Gregory,Parham,ms.parham@sbcglobal.net,915-584-7092,6 Cielo Dorado,Anthony,NM,88021,,TRUE,,3,,,,,Y,225
+95,Verena Williamson,Rose Y,Pergricht,,915-584-3523,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,1,,,,,Y,75
+96,HDQ HDQ,Colette,Perry,colettpetty@sbcglobal.net,915-775-0089,8412 Catalpa Ln,El Paso,TX,79925,,TRUE,,1,,,,,Y,100
+97,HDQ HDQ,Sally,Ponzio,sponzio@aol.com,915-859-1792,230 Harvard Ave,El Paso,TX,79907,,TRUE,1,2,,,,,Y,223
+98,HDQ HDQ,Leonor,Posner,jdiazday@yahoo.com,915-584-1620,309 Quincy Ave,El Paso,TX,79922-1228,TRUE,,,2,,,,,Y,150
+99,David and Becky Avila,Don,Powell,donleepowell@aol.com,915-821-7170,4933 Grapeland,El Paso,TX,79924,,TRUE,,2,,,,,Y,150
+100,Maria Almaraz,Kay,Radon,,915-584-7840,1220 Belvidere,El Paso,TX,79912,,TRUE,,1,,,,,Y,100
+101,HDQ HDQ,Kathleen,Ramos,kathyktchr@aol.com,915-877-5015,1056 Miss Bev Ave,El Paso,TX,79932,TRUE,,1,,1,2,3,,Y,503
+102,HDQ HDQ,Linda,Reece,lrr76@hotmail.com,915-590-4222,3005 Yarwood Dr,El Paso,TX,79935,,TRUE,,2,,,,,Y,150
+103,HDQ HDQ,Marian,Riley,,,8313 Hopewell Dr,El Paso,TX,79925-2601,,TRUE,,1,,,,,Y,75
+104,HDQ HDQ,Thomas,Rood,tomrood@sbcglobal.net,915-603-7261,236 Viking Dr,El Paso,TX,79912,,TRUE,,1,,,,,Y,75
+105,HDQ HDQ,Brenda,Rutledge,brendarutledge@sbcglobal.net,915-592-6773,11216 Dick Lotz,El Paso,TX,79936,,,,1,,,,,Y,75
+106,Sue Sanchez,Sue,Sanchez,sanchez_sue@hotmail.com,915-590-3512,1353 Backus St,El Paso,TX,79925,,TRUE,1,3,,,,,Y,253
+107,HDQ HDQ,Michael,Sanders,michael_1957@msn.com,915-474-2728,713 Rosinante Road,El Paso,TX,79922,TRUE,,,2,,,,,Y,150
+108,Maria Almaraz,John,Schmid,jaschmid2@sbcglobal.net,915-588-3202,5704 Burning Tree Dr,El Paso,TX,79912-4106,,TRUE,,2,,,,,Y,150
+109,HDQ HDQ,Dan and Kathleen,Schulte,schultedks@sbcglobal.net,915-755-3387,3130 Mesa Verde Ln,El Paso,TX,79904,,TRUE,1,2,,,,,Y,178
+110,HDQ HDQ,Jane and Ken,Schwenke,,915-584-4551,704 Waltham Ct,El Paso,TX,79922,,TRUE,1,2,,,,,Y,178
+111,Ray and Carmen Olivas-Graham,Joe Bob,Shook,jshook@elp.rr.com,915-433-6253,19019 Barrington Rd,Horizon City,TX,79928,,TRUE,,2,,,,,Y,150
+112,Maria Almaraz,Barbara,Silva,,,7216 Cerro Negro Dr,El Paso,TX,79912,,TRUE,,1,,,,,Y,75
+113,Nina Siros,Nina,Siros,ninasiros@yahoo.com,915-309-3269,1208 Devonshire,El Paso,TX,79925,,TRUE,,1,,,,,Y,575
+114,HDQ HDQ,Lamar,Skarda,lamarskarda@gmail.com,,857 Lakeway Dr,El Paso,TX,79932,,TRUE,,2,,,,,Y,150
+115,HDQ HDQ,Pat,Smith,gosolarenergy2@yahoo.com,915-544-8417,709 Mississippi Dr,El Paso,TX,,,TRUE,,5,,,,,Y,375
+116,Verena Williamson,Rodney and Jeanene,Smith,,915-585-0110,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,2,,,,,Y,250
+117,Jimmy and Donna Melver ,Charles,Stapler,csrs5601@sbcglobal.net,915-833-1406,8672 Pilgrimage Cir,El Paso,TX,79912-1363,TRUE,,,3,,,,,Y,250
+118,HDQ HDQ,Armida,Stevens,,915-584-8540,1216 Cerrito Bello,El Paso,TX,79912,,TRUE,,1,,,,,Y,75
+119,Jimmy and Donna Melver ,Mark,Swendiman,mswendiman@elp.rr.com,915-491-8478,3212 Malapai Ln,El Paso,TX,79904,,TRUE,1,,1,2,3,,Y,203
+120,HDQ HDQ,Donald,Tomko,dltomko301@att.net,915-549-6128,4918 Maxwell Ave,El Paso,TX,79904-1428,TRUE,,1,2,,,,,Y,178
+121,Verena Williamson,Minnie,Travis,,915-539-3419,P.O. Box 1821,Santa Teresa,NM,88008,TRUE,TRUE,,1,,,,,Y,75
+122,HDQ HDQ,Donnetta,Vollmer,dlvollme@aol.com,915-751-3441,10040 Foothills Dr,El Paso,TX,79924,,TRUE,,1,,,,,Y,75
+123,HDQ HDQ,Corinne,Vonberg,,915-598-8993,1820 Tom Bolt Dr,El Paso,TX,79936,,TRUE,,2,,,,,Y,150
+124,HDQ HDQ,Rachel,Weinstein,mikenrachel@elp.rr.com,915-581-0836,6976 Granero Dr,El Paso,TX,79915,,TRUE,,1,,,,,Y,75
+125,HDQ HDQ,Carole,Wheeler,,915-821-7908,10332 Shoshone,El Paso,TX,79924,,TRUE,,1,,,,,Y,75
+126,Jimmy and Donna Melver ,William,Wickline,billyums@earthlink.net,915-755-3030,10021 Goliad Dr,El Paso,TX,79924,,TRUE,1,1,,,,,Y,203
+127,HDQ HDQ,David,Williams,ldavidwilliamsept@gmail.com,915-591-0844,9513 Desert Ridge Dr,El Paso,TX,79925,,TRUE,1,2,,,,,Y,185
+128,Verena Williamson,Jim and Verena,Williamson,,915-549-5475,P.O. Box 1821,Santa Teresa,NM,88008,,TRUE,,2,,,,,Y,150
+129,Daphne Wilson,Daphne,Wilson,dadiwill@juno.com,915-585-1982,6317 El Risco,El Paso,TX,79912-2507,,TRUE,,1,,,,,Y,175
+130,Maria Almaraz,Dieter,Winterhalter,,,6277 Wilderwood Ct,El Paso,TX,79912-3212,,TRUE,,1,,,,,Y,75
+131,Myrna and Joe Zanetell,Myrna,Zanetell,,915-833-5108,812 Live Oak Dr,El Paso,TX,79932,,TRUE,,1,,,,,Y,75
+132,HDQ HDQ,Rosaline,Zimmerly,,915-875-2738,410 Rose Lane,El Paso,TX,79915,,TRUE,,2,,,,,Y,150
+133,Cathie Hill,Cathie,Hill,chill86@juno.com,915-584-1201,,El Paso,TX,79932,,TRUE,,1,,,,,N,75
+134,Jimmy and Donna Melver,Jose,Amezcua,,,4631 Hondo Pass,El Paso,TX,79904,TRUE,TRUE,,4,,,,,Y,300

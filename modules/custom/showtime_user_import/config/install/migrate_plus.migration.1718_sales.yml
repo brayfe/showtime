@@ -51,6 +51,10 @@ source:
       fp_child: 'Family Plan - Child'
     17:
       child_ticket: 'Youth Ticket'
+    18:
+      early_bird: 'Early Bird'
+    19:
+      donation: 'Donation'
 
 destination:
   plugin: entity:node
@@ -117,6 +121,13 @@ process:
     map:
       'TRUE': 0
     default_value: 1
+  field_early_bird:
+    plugin: static_map
+    source: early_bird
+    map:
+      'N': 0
+    default_value: 1
+  field_donation: donation
 
 dependencies:
   enforced:
