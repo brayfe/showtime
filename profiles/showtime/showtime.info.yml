@@ -44,13 +44,17 @@ dependencies:
   - admin_toolbar
   - address
   - config_update
+  - csv_serialization
   - ctools
   - features
   - features_ui
   - field
   - field_group
   - pathauto
+  - rest
+  - serialization
   - token
+  - views_data_export
 
 
 themes:

@@ -1034,6 +1034,19 @@ display:
         weight: 0
         context: '0'
         menu_name: reports
+      exposed_block: true
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      defaults:
+        exposed_form: false
     cache_metadata:
       max-age: -1
       contexts:

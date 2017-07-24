@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: reports
+label: 'Reports'
+description: 'Links to Showtime reports.'
+locked: true
