@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.subscription.field_collected
     - field.field.node.subscription.field_donation
+    - field.field.node.subscription.field_early_bird
     - field.field.node.subscription.field_family_package
     - field.field.node.subscription.field_new_subscriber
     - field.field.node.subscription.field_order_season
@@ -35,6 +36,7 @@ content:
 hidden:
   field_collected: true
   field_donation: true
+  field_early_bird: true
   field_family_package: true
   field_new_subscriber: true
   field_order_season: true

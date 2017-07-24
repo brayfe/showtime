@@ -18,7 +18,7 @@ settings:
   id: 'views_exposed_filter_block:unassigned-page_1'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
 visibility:
   request_path:

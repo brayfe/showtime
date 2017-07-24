@@ -5,6 +5,8 @@ core: 8.x
 dependencies:
   - address
   - auto_entitylabel
+  - block
+  - csv_serialization
   - field
   - field_group
   - inline_entity_form
@@ -12,8 +14,12 @@ dependencies:
   - node
   - options
   - path
+  - rest
+  - serialization
+  - system
   - taxonomy
   - telephone
   - user
   - views
+  - views_data_export
 version: 8.x-1.0
