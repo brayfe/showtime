@@ -47,6 +47,7 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
+    'League\\Csv\\' => array($vendorDir . '/league/csv/src'),
     'Humbug\\SelfUpdate\\' => array($vendorDir . '/padraic/phar-updater/src'),
     'Humbug\\' => array($vendorDir . '/padraic/humbug_get_contents/src'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
