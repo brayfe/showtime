@@ -10,7 +10,6 @@ dependencies:
     - field.field.user.user.field_last_name
     - field.field.user.user.field_phone
   module:
-    - address
     - user
 id: user.user.compact
 targetEntityType: user
