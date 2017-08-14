@@ -1,0 +1,113 @@
+id: subscriptions
+label: Import All Ticket Sales
+migration_group: sales
+
+source:
+  plugin: csv
+  # Full path to the file.
+  path: 'csvs/subscriptions.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    0:
+      id: 'Unique Id'
+    1:
+      season: 'Order Season'
+    2:
+      sales_rep: 'Sales Representative'
+    3:
+      subscriber: 'Subscriber'
+    4:
+      new: 'First-time Customer'
+    5:
+      offline: 'Offline/Online'
+    6:
+      parking: 'Parking Passes'
+    7:
+      adult_ticket: 'Adult Ticket'
+    8:
+      child_ticket: 'Youth Ticket'
+    9:
+      family_plan: 'Family Plan'
+    10:
+      fp_adult: 'Family Plan - Adult'
+    11:
+      fp_child: 'Family Plan - Child'
+    12:
+      early_bird: 'Early Bird'
+    13:
+      donation: 'Donation'
+
+destination:
+  plugin: entity:node
+
+process:
+  type:
+    plugin: default_value
+    default_value: subscription
+  status:
+    plugin: default_value
+    default_value: 1
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: id
+  field_order_season:
+    plugin: static_map
+    source: season
+    map:
+      '2014 - 2015': 1
+      '2015 - 2016': 2
+      '2016 - 2017': 3
+      '2017 - 2018': 4
+  field_subscriber:
+    plugin: migration
+    migration: subscribers
+    source: subscriber
+  field_new_subscriber: new
+    # plugin: static_map
+    # source: new
+    # map:
+    #   # from: to
+    #   'Yes': 1
+    #   'No': 0
+    # default_value: 0
+  field_single_adult: adult_ticket
+  field_single_youth: child_ticket
+  field_family_package: family_plan
+  field_package_adult: fp_adult
+  field_package_child: fp_child
+  field_parking_pass: parking
+  field_collected:
+    plugin: static_map
+    source: offline
+    map:
+      Offline: 0
+      Online: 1
+    default_value: 0
+  field_early_bird: early_bird
+    # plugin: static_map
+    # source: early_bird
+    # map:
+    #   'No': 0
+    #   'Yes': 1
+    # default_value: 1
+  field_donation: donation
+
+migration_dependencies:
+  required:
+      - sales_reps
+
+dependencies:
+  enforced:
+    module:
+      - showtime_user_import

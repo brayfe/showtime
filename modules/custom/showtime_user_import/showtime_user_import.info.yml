@@ -14,7 +14,9 @@ config_devel:
   - migrate_plus.migration.division_chairs
   - migrate_plus.migration.captains
   - migrate_plus.migration.sales_reps
+  - migrate_plus.migration.subscribers
   - migrate_plus.migration.1415_sales
   - migrate_plus.migration.1516_sales
   - migrate_plus.migration.1617_sales
   - migrate_plus.migration.1718_sales
+  - migrate_plus.migration.subscriptions
