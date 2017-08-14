@@ -1,8 +1,8 @@
 node_type_subscription_status: '1'
-node_type_subscription_pattern: '[node:nid] - [node:field_subscriber_first_name] [node:field_subscriber_last_name]'
+node_type_subscription_pattern: '[node:nid] - [node:field_subscriber:entity:field_first_name] [node:field_subscriber:entity:field_last_name]'
 node_type_subscription_php: 0
 submit: 'Save configuration'
-form_build_id: form-l8a7jZ1hEhzw_eNRuKZFLOQWEJRXv0yUMUzOoc2kkyc
-form_token: Xdfzr1Z9N-3myTZVurPAPKMeYkkkd9-HHQs1HSveDG4
+form_build_id: form-KPiABJs-71mCe79RewR8UIgdQbp4Sm0KYZJyGsh8LsQ
+form_token: 2cMSFqC3V8D2ftJ4tkp8gjTJTL1hCL2z9iIorwjCd8c
 form_id: auto_entitylabel_settings_form
 op: 'Save configuration'

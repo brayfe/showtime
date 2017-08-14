@@ -12,14 +12,8 @@ dependencies:
     - field.field.node.subscription.field_package_adult
     - field.field.node.subscription.field_package_child
     - field.field.node.subscription.field_parking_pass
-    - field.field.node.subscription.field_sales_representative
     - field.field.node.subscription.field_single_adult
     - field.field.node.subscription.field_single_youth
-    - field.field.node.subscription.field_subscriber_address
-    - field.field.node.subscription.field_subscriber_email
-    - field.field.node.subscription.field_subscriber_first_name
-    - field.field.node.subscription.field_subscriber_last_name
-    - field.field.node.subscription.field_subscriber_phone
     - node.type.subscription
   module:
     - user
@@ -43,11 +37,5 @@ hidden:
   field_package_adult: true
   field_package_child: true
   field_parking_pass: true
-  field_sales_representative: true
   field_single_adult: true
   field_single_youth: true
-  field_subscriber_address: true
-  field_subscriber_email: true
-  field_subscriber_first_name: true
-  field_subscriber_last_name: true
-  field_subscriber_phone: true

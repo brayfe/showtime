@@ -11,20 +11,13 @@ dependencies:
     - field.field.node.subscription.field_package_adult
     - field.field.node.subscription.field_package_child
     - field.field.node.subscription.field_parking_pass
-    - field.field.node.subscription.field_sales_representative
     - field.field.node.subscription.field_single_adult
     - field.field.node.subscription.field_single_youth
-    - field.field.node.subscription.field_subscriber_address
-    - field.field.node.subscription.field_subscriber_email
-    - field.field.node.subscription.field_subscriber_first_name
-    - field.field.node.subscription.field_subscriber_last_name
-    - field.field.node.subscription.field_subscriber_phone
+    - field.field.node.subscription.field_subscriber
     - node.type.subscription
   module:
-    - address
     - field_group
     - path
-    - telephone
 third_party_settings:
   field_group:
     group_single_tickets:
@@ -32,7 +25,7 @@ third_party_settings:
         - field_single_adult
         - field_single_youth
       parent_name: ''
-      weight: 5
+      weight: 3
       format_type: details
       format_settings:
         id: ''
@@ -46,7 +39,7 @@ third_party_settings:
         - field_package_adult
         - field_package_child
       parent_name: ''
-      weight: 6
+      weight: 4
       format_type: details
       format_settings:
         label: 'Family Package'
@@ -57,14 +50,10 @@ third_party_settings:
       label: 'Family Package'
     group_subscriber:
       children:
+        - field_subscriber
         - field_new_subscriber
-        - field_subscriber_first_name
-        - field_subscriber_last_name
-        - field_subscriber_address
-        - field_subscriber_email
-        - field_subscriber_phone
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: details
       format_settings:
         id: ''
@@ -79,25 +68,25 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_collected:
-    weight: 9
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_donation:
-    weight: 8
+    weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_early_bird:
-    weight: 26
+    weight: 12
     settings:
       display_label: true
     third_party_settings: {  }
@@ -110,7 +99,7 @@ content:
     type: options_buttons
     region: content
   field_new_subscriber:
-    weight: 2
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -136,19 +125,10 @@ content:
     type: number
     region: content
   field_parking_pass:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-    region: content
-  field_sales_representative:
-    weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   field_single_adult:
     weight: 6
@@ -164,47 +144,18 @@ content:
     third_party_settings: {  }
     type: number
     region: content
-  field_subscriber_address:
+  field_subscriber:
     weight: 5
     settings:
-      default_country: null
-    third_party_settings: {  }
-    type: address_default
-    region: content
-  field_subscriber_email:
-    weight: 6
-    settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: email_default
-    region: content
-  field_subscriber_first_name:
-    weight: 3
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_subscriber_last_name:
-    weight: 4
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_subscriber_phone:
-    weight: 7
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: telephone_default
+    type: entity_reference_autocomplete
     region: content
   path:
     type: path
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -218,7 +169,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS

@@ -4,8 +4,8 @@ dependencies:
   module:
     - node
     - user
-id: node.field_sales_representative
-field_name: field_sales_representative
+id: node.field_subscriber
+field_name: field_subscriber
 entity_type: node
 type: entity_reference
 settings:
