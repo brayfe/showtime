@@ -2,9 +2,14 @@ name: 'Subscription Listing'
 type: module
 core: 8.x
 dependencies:
+  - address
+  - csv_serialization
   - node
+  - rest
+  - serialization
   - showtime_subscription
   - taxonomy
   - user
   - views
+  - views_data_export
 version: 8.x-1.0
