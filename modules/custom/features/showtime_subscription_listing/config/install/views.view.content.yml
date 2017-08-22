@@ -586,7 +586,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: contains
+          operator: word
           value: ''
           group: 1
           exposed: true
@@ -607,6 +607,7 @@ display:
               chair: '0'
               captain: '0'
               sales_rep: '0'
+              subscriber: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -619,7 +620,11 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          fields: {  }
+          fields:
+            title: title
+            field_first_name: field_first_name
+            field_last_name: field_last_name
+            field_sales_rep: field_sales_rep
           plugin_id: combine
         field_new_subscriber_value:
           id: field_new_subscriber_value
@@ -779,13 +784,6 @@ display:
           plugin_id: text_custom
       arguments: {  }
       relationships:
-        uid:
-          id: uid
-          table: node_field_data
-          field: uid
-          admin_label: author
-          required: true
-          plugin_id: standard
         field_subscriber:
           id: field_subscriber
           table: node__field_subscriber
