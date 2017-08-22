@@ -73,17 +73,22 @@ process:
     plugin: migration
     migration: subscribers
     source: subscriber
-  field_new_subscriber: new
-    # plugin: static_map
-    # source: new
-    # map:
-    #   # from: to
-    #   'Yes': 1
-    #   'No': 0
-    # default_value: 0
+  field_new_subscriber:
+    plugin: static_map
+    source: new
+    map:
+      'Yes': 1
+      'No': 0
+    default_value: 0
   field_single_adult: adult_ticket
   field_single_youth: child_ticket
-  field_family_package: family_plan
+  field_family_package:
+    plugin: static_map
+    source: family_plan
+    map:
+      'No': 0
+      'Yes': 1
+    default_value: 1
   field_package_adult: fp_adult
   field_package_child: fp_child
   field_parking_pass: parking
@@ -94,13 +99,13 @@ process:
       Offline: 0
       Online: 1
     default_value: 0
-  field_early_bird: early_bird
-    # plugin: static_map
-    # source: early_bird
-    # map:
-    #   'No': 0
-    #   'Yes': 1
-    # default_value: 1
+  field_early_bird:
+    plugin: static_map
+    source: early_bird
+    map:
+      'No': 0
+      'Yes': 1
+    default_value: 1
   field_donation: donation
 
 migration_dependencies:

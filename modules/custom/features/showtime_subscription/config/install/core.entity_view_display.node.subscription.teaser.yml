@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.subscription.field_parking_pass
     - field.field.node.subscription.field_single_adult
     - field.field.node.subscription.field_single_youth
+    - field.field.node.subscription.field_subscriber
     - node.type.subscription
   module:
     - user
@@ -39,3 +40,4 @@ hidden:
   field_parking_pass: true
   field_single_adult: true
   field_single_youth: true
+  field_subscriber: true

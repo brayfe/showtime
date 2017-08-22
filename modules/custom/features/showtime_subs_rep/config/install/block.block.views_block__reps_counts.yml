@@ -8,14 +8,14 @@ dependencies:
     - views
   theme:
     - bootstrap
-id: views_block__reps_block_1
+id: views_block__reps_counts
 theme: bootstrap
 region: sidebar_first
-weight: -6
+weight: 0
 provider: null
-plugin: 'views_block:subs_by_rep-block_1'
+plugin: 'views_block:subs_by_rep-tix_counts'
 settings:
-  id: 'views_block:subs_by_rep-block_1'
+  id: 'views_block:subs_by_rep-tix_counts'
   label: ''
   provider: views
   label_display: visible

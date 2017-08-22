@@ -8,18 +8,18 @@ dependencies:
     - views
   theme:
     - bootstrap
-id: views_block__reps_block_2
+id: views_block__reps_leaders
 theme: bootstrap
 region: sidebar_first
 weight: 0
 provider: null
-plugin: 'views_block:subs_by_rep-block_2'
+plugin: 'views_block:subs_by_rep-leaders'
 settings:
-  id: 'views_block:subs_by_rep-block_2'
-  label: 'Ticket Counts'
+  id: 'views_block:subs_by_rep-leaders'
+  label: ''
   provider: views
   label_display: visible
-  views_label: 'Ticket Counts'
+  views_label: ''
   items_per_page: none
   context_mapping: {  }
 visibility:
