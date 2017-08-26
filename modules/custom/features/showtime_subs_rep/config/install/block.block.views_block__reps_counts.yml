@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/subs-by-rep*'
+    pages: '/subs-by-rep/*'
     negate: false
     context_mapping: {  }
