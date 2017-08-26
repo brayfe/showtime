@@ -91,7 +91,12 @@ process:
     default_value: 1
   field_package_adult: fp_adult
   field_package_child: fp_child
-  field_parking_pass: parking
+  field_parking_pass:
+    plugin: static_map
+    source: parking
+    map:
+      'No': 0
+      'Yes': 1
   field_collected:
     plugin: static_map
     source: offline
