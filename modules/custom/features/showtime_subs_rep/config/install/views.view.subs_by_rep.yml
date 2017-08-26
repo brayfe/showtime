@@ -18,6 +18,7 @@ dependencies:
     - field.storage.user.field_first_name
     - field.storage.user.field_last_name
     - field.storage.user.field_phone
+    - system.menu.reports
     - taxonomy.vocabulary.season
   module:
     - address
@@ -3311,6 +3312,15 @@ display:
           expose:
             label: ''
           plugin_id: standard
+      menu:
+        type: normal
+        title: 'Export Sales Rep Data'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: reports
     cache_metadata:
       max-age: -1
       contexts:
